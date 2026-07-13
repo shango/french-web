@@ -19,6 +19,16 @@
   //   the public internet (Clerk's API calls), avoiding same-zone loopback surprises.
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
 
+  // Custom domains: the Worker is the origin for the apex and www, DNS is managed automatically.
+  // `wrangler deploy` provisions these + their certs on the `lecahier.courses` zone (which must be
+  // in this Cloudflare account). If the apex already has a proxied DNS record for something else,
+  // remove/replace it first or the provisioning will conflict. Canonical URLs point at the apex
+  // (see astro.config `SITE`), so www is deduped for SEO; swap www to a redirect rule if preferred.
+  "routes": [
+    { "pattern": "lecahier.courses", "custom_domain": true },
+    { "pattern": "www.lecahier.courses", "custom_domain": true }
+  ],
+
   // Prerendered static output. `binding` exposes it to the Worker as env.ASSETS; the Worker
   // only runs for routes without a matching static file (i.e. /start).
   "assets": {

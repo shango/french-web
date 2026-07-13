@@ -6,7 +6,7 @@ import clerk from '@clerk/astro'
 
 // Public site origin. Used for sitemap, canonical URLs, and absolute OG image URLs.
 // Change this single constant when the final domain is known.
-const SITE = 'https://lecahier.app'
+const SITE = 'https://lecahier.courses'
 
 // https://astro.build/config
 export default defineConfig({

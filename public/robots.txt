@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lecahier.app/sitemap-index.xml
+Sitemap: https://lecahier.courses/sitemap-index.xml
