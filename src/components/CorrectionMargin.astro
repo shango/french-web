@@ -1,0 +1,24 @@
+---
+// The red correction margin - two thin vertical rules on the left edge of a card/panel.
+// Place inside a position:relative container; left-pad the card content (~40px) to clear it.
+interface Props {
+  inset?: number // top/bottom inset in px
+  left?: number // x of the first (stronger) rule
+  gap?: number // distance to the second (fainter) rule
+  strong?: number // opacity of the first rule
+  faint?: number // opacity of the second rule
+}
+const { inset = 16, left = 30, gap = 4, strong = 0.45, faint = 0.16 } = Astro.props
+---
+
+<span class="cm" style={`top:${inset}px; bottom:${inset}px; left:${left}px; opacity:${strong};`} aria-hidden="true"></span>
+<span class="cm" style={`top:${inset}px; bottom:${inset}px; left:${left + gap}px; opacity:${faint};`} aria-hidden="true"></span>
+
+<style>
+  .cm {
+    position: absolute;
+    width: 1.5px;
+    background: var(--red);
+    pointer-events: none;
+  }
+</style>

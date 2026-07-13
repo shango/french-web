@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#FCFAF3; font-family:'Hanken Grotesk',system-ui,sans-serif; -webkit-font-smoothing:antialiased; color:#1E2A44; }
+  a{ color:#C4362F; text-decoration:none; }
+  a:hover{ color:#9E2A24; }
+</style>
+</helmet>
+
+<div style="background:#FCFAF3; min-height:100%; overflow-x:hidden;">
+
+  <!-- NAV -->
+  <header style="position:sticky; top:0; z-index:20; background:rgba(252,250,243,.88); backdrop-filter:blur(10px); border-bottom:1px solid #EDE6D6;">
+    <div style="max-width:1080px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="Le Cahier - Home.dc.html" style="font-family:'EB Garamond',serif; font-size:25px; color:#C4362F; white-space:nowrap;">Le Cahier</a>
+      <nav style="display:flex; align-items:center; gap:30px;">
+        <a href="Le Cahier - How It Works.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:14px; font-weight:600; color:#1E2A44;">How it works</a>
+        <a href="Le Cahier - Pricing & FAQ.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:14px; font-weight:500; color:#55607A;" style-hover="color:#1E2A44">Pricing &amp; FAQ</a>
+        <a href="Le Cahier - Start Free.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:14px; font-weight:600; color:#FCFAF3; background:#1E2A44; border-radius:9px; padding:10px 18px;" style-hover="color:#FCFAF3; background:#111a30">Start free</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section style="max-width:1080px; margin:0 auto; padding:70px 32px 20px; text-align:center;">
+    <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#8C8776;">How it works</div>
+    <h1 style="font-family:'EB Garamond',serif; font-weight:500; font-size:48px; line-height:1.1; color:#1E2A44; margin:16px auto 0; max-width:680px;">The method is the pitch. So here it is, in full.</h1>
+    <p style="font-family:'Hanken Grotesk',sans-serif; font-size:17px; line-height:1.6; color:#55607A; max-width:540px; margin:18px auto 0;">No testimonials, no funnel. Just the honest loop you'll actually run, the same screens you'll see the day you start.</p>
+  </section>
+
+  <!-- STEP 01 · pick your reason -->
+  <section style="max-width:1080px; margin:0 auto; padding:56px 32px; display:flex; gap:56px; align-items:center; flex-wrap:wrap;">
+    <div style="flex:1 1 340px; min-width:300px;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span style="font-family:'EB Garamond',serif; font-size:19px; color:#C4362F;">01</span>
+        <span style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#8C8776;">A gentle start</span>
+      </div>
+      <h2 style="font-family:'EB Garamond',serif; font-weight:500; font-size:32px; line-height:1.16; color:#1E2A44; margin:14px 0 0;">Tell us why, then everyone learns the same base.</h2>
+      <p style="font-family:'Hanken Grotesk',sans-serif; font-size:16px; line-height:1.6; color:#55607A; margin:14px 0 0; max-width:420px;">Travel, work, family, or plain curiosity only re-orders and flavours your first words. There's no branching maze, one honest path to 400 words. Already know some French? Prove it in two minutes and skip ahead.</p>
+    </div>
+    <div style="flex:1 1 400px; min-width:300px; display:flex; justify-content:center;">
+      <div style="width:400px; max-width:100%; background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; box-shadow:0 20px 46px -26px rgba(30,42,68,.42); padding:26px 26px 22px;">
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#A69C82;">A gentle start</div>
+        <div style="font-family:'EB Garamond',serif; font-size:25px; color:#1E2A44; margin-top:8px;">Why are you learning French?</div>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-top:18px;">
+          <div style="display:flex; align-items:center; gap:14px; padding:13px 15px; border-radius:12px; border:1.5px solid #8B5A78; background:#F6F1FB;">
+            <span style="width:22px; height:22px; border-radius:50%; border:1.5px solid #8B5A78; background:#8B5A78; display:flex; align-items:center; justify-content:center; color:#FCFAF3; font-size:12px; flex:none;">✓</span>
+            <div><div style="font-family:'EB Garamond',serif; font-size:18px; color:#1E2A44;">Travel</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#8A8674;">Menus, directions, a warm bonjour.</div></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px; padding:13px 15px; border-radius:12px; border:1.5px solid #E8E1CF; background:#FFFFFF;">
+            <span style="width:22px; height:22px; border-radius:50%; border:1.5px solid #D9CEEC; background:#FFFFFF; flex:none;"></span>
+            <div><div style="font-family:'EB Garamond',serif; font-size:18px; color:#1E2A44;">Work</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#8A8674;">Email, meetings, introductions.</div></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px; padding:13px 15px; border-radius:12px; border:1.5px solid #E8E1CF; background:#FFFFFF;">
+            <span style="width:22px; height:22px; border-radius:50%; border:1.5px solid #D9CEEC; background:#FFFFFF; flex:none;"></span>
+            <div><div style="font-family:'EB Garamond',serif; font-size:18px; color:#1E2A44;">Just curious</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#8A8674;">The quiet joy of a new language.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 02 · choose a deck -->
+  <section style="background:#E7E3D9; border-top:1px solid #D6CFBF; border-bottom:1px solid #D6CFBF;">
+    <div style="max-width:1080px; margin:0 auto; padding:64px 32px; display:flex; gap:56px; align-items:center; flex-wrap:wrap; flex-direction:row-reverse;">
+      <div style="flex:1 1 340px; min-width:300px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span style="font-family:'EB Garamond',serif; font-size:19px; color:#C4362F;">02</span>
+          <span style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#8C8776;">Find a deck</span>
+        </div>
+        <h2 style="font-family:'EB Garamond',serif; font-weight:500; font-size:32px; line-height:1.16; color:#1E2A44; margin:14px 0 0;">High-frequency first. A base, then the glue.</h2>
+        <p style="font-family:'Hanken Grotesk',sans-serif; font-size:16px; line-height:1.6; color:#55607A; margin:14px 0 0; max-width:420px;">Verbs and nouns you'll use every day come first. Cognates are the fast win. Connectives, the little words that join sentences, stay locked until you have a base to attach them to, so they land in context, not in a vacuum.</p>
+      </div>
+      <div style="flex:1 1 420px; min-width:300px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+          <div style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:14px; padding:18px; box-shadow:0 10px 22px -18px rgba(30,42,68,.5);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;"><div style="font-family:'EB Garamond',serif; font-size:20px; color:#1E2A44;">Verbs</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#55607A;">42 / 60</div></div>
+            <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:#A69C82; margin-top:2px;">everyday actions</div>
+            <div style="height:4px; background:#EDE6D6; border-radius:2px; overflow:hidden; margin-top:14px;"><div style="width:70%; height:100%; background:#435E7E;"></div></div>
+          </div>
+          <div style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:14px; padding:18px; box-shadow:0 10px 22px -18px rgba(30,42,68,.5);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;"><div style="font-family:'EB Garamond',serif; font-size:20px; color:#1E2A44;">Nouns</div><span style="color:#8B5A78; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span></div>
+            <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:#A69C82; margin-top:2px;">5 situations</div>
+            <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#55607A; margin-top:14px;">55 / 150</div>
+          </div>
+          <div style="background:#FCFAF3; border:1px solid #E4DBC2; border-radius:14px; padding:18px; box-shadow:0 10px 22px -18px rgba(30,42,68,.5);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;"><div style="font-family:'EB Garamond',serif; font-size:20px; color:#1E2A44;">Cognates</div><div style="width:28px; height:28px; border-radius:50%; background:radial-gradient(circle at 38% 34%, #E7C561, #C29A3B 60%, #9E7A26); box-shadow:inset 0 1px 2px rgba(255,255,255,.45); display:flex; align-items:center; justify-content:center; color:#5E4712; font-size:12px; transform:rotate(-8deg);">✦</div></div>
+            <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:#B08A2E; margin-top:2px;">mastered, sealed</div>
+            <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#55607A; margin-top:14px;">180 / 180</div>
+          </div>
+          <div style="background:#F6F2E8; border:1px dashed #D8CFBB; border-radius:14px; padding:18px; opacity:.9;">
+            <div style="font-family:'EB Garamond',serif; font-size:20px; color:#8A8674; display:flex; align-items:center; gap:7px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B3AE9C" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Connectives</div>
+            <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:#A69C82; margin-top:4px; line-height:1.5;">Learn 25 more words to unlock.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 03 · tap to answer -->
+  <section style="max-width:1080px; margin:0 auto; padding:64px 32px; display:flex; gap:56px; align-items:center; flex-wrap:wrap;">
+    <div style="flex:1 1 340px; min-width:300px;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span style="font-family:'EB Garamond',serif; font-size:19px; color:#C4362F;">03</span>
+        <span style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#8C8776;">Study · tap to answer</span>
+      </div>
+      <h2 style="font-family:'EB Garamond',serif; font-weight:500; font-size:32px; line-height:1.16; color:#1E2A44; margin:14px 0 0;">Nouns come with their gender, drilled in the ordinary card.</h2>
+      <p style="font-family:'Hanken Grotesk',sans-serif; font-size:16px; line-height:1.6; color:#55607A; margin:14px 0 0; max-width:420px;">The row is the control, no submit button, no radio dots. Tap the French and it grades instantly. The natural distractor is the right noun with the <i>wrong article</i>, so <span style="color:#435E7E;">le</span> vs <span style="color:#8B5A78;">la</span> gets learned without ever a separate “le or la?” quiz.</p>
+    </div>
+    <div style="flex:1 1 400px; min-width:300px; display:flex; justify-content:center;">
+      <div style="width:384px; max-width:100%; position:relative; background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; box-shadow:0 20px 46px -26px rgba(30,42,68,.42); overflow:hidden;">
+        <div style="position:absolute; top:16px; bottom:16px; left:30px; width:1.5px; background:#C4362F; opacity:.45;"></div>
+        <div style="position:absolute; top:16px; bottom:16px; left:34px; width:1.5px; background:#C4362F; opacity:.16;"></div>
+        <div style="padding:20px 22px 12px 40px;">
+          <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#A69C82;">Nouns · tap the French</div>
+          <div style="font-family:'EB Garamond',serif; font-size:29px; color:#1E2A44; margin-top:9px; line-height:1;">the house</div>
+          <div style="height:1.5px; background:#C9BEE6; margin-top:13px;"></div>
+        </div>
+        <div style="padding:4px 22px 14px 40px; display:flex; flex-direction:column; gap:9px;">
+          <div style="display:flex; align-items:center; gap:13px; padding:12px 16px; border-radius:11px; border:1.5px solid #E0A9A3; background:#FBEBE9; min-height:50px;">
+            <span style="width:6px; height:6px; border-radius:50%; background:#C9BEE6; flex:none;"></span>
+            <span style="font-family:'EB Garamond',serif; font-style:italic; font-size:22px; color:#435E7E;">le</span>
+            <span style="font-family:'EB Garamond',serif; font-size:22px; color:#1E2A44;">maison</span>
+            <span style="margin-left:auto; color:#C4362F; font-size:14px;">✕</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:13px; padding:12px 16px; border-radius:11px; border:1.5px solid #9BC6AF; background:#E9F2EC; min-height:50px;">
+            <span style="width:6px; height:6px; border-radius:50%; background:#C9BEE6; flex:none;"></span>
+            <span style="font-family:'EB Garamond',serif; font-style:italic; font-size:22px; color:#8B5A78;">la</span>
+            <span style="font-family:'EB Garamond',serif; font-size:22px; color:#1E2A44;">maison</span>
+            <span style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:#8A8674;">house</span>
+            <span style="margin-left:auto; color:#2E7D5B; font-size:17px;">✓</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:13px; padding:12px 16px; border-radius:11px; border:1.5px solid #DACFEC; background:#FFFFFF; opacity:.42; min-height:50px;">
+            <span style="width:6px; height:6px; border-radius:50%; background:#C9BEE6; flex:none;"></span>
+            <span style="font-family:'EB Garamond',serif; font-style:italic; font-size:22px; color:#8B5A78;">la</span>
+            <span style="font-family:'EB Garamond',serif; font-size:22px; color:#1E2A44;">porte</span>
+          </div>
+        </div>
+        <div style="border-top:1px solid #EDE6D6; padding:15px 22px 16px 40px; display:flex; align-items:center; justify-content:space-between; gap:12px;">
+          <div style="font-family:'EB Garamond',serif; font-size:15.5px; color:#1E2A44; line-height:1.35;">It's <i style="color:#8B5A78;">la</i> maison, feminine. <span style="color:#A69C82; font-family:'Hanken Grotesk',sans-serif; font-size:12px;">gently noted.</span></div>
+          <span style="font-family:'Hanken Grotesk',sans-serif; font-size:14px; font-weight:600; color:#FCFAF3; background:#1E2A44; border-radius:9px; padding:10px 18px;">Next</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 04 · connectives in context -->
+  <section style="background:#E7E3D9; border-top:1px solid #D6CFBF; border-bottom:1px solid #D6CFBF;">
+    <div style="max-width:1080px; margin:0 auto; padding:64px 32px; display:flex; gap:56px; align-items:center; flex-wrap:wrap; flex-direction:row-reverse;">
+      <div style="flex:1 1 340px; min-width:300px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span style="font-family:'EB Garamond',serif; font-size:19px; color:#C4362F;">04</span>
+          <span style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#8C8776;">Study · in context</span>
+        </div>
+        <h2 style="font-family:'EB Garamond',serif; font-weight:500; font-size:32px; line-height:1.16; color:#1E2A44; margin:14px 0 0;">Connectives are taught inside real sentences.</h2>
+        <p style="font-family:'Hanken Grotesk',sans-serif; font-size:16px; line-height:1.6; color:#55607A; margin:14px 0 0; max-width:420px;">Every carrier sentence is built only from words you already know, so a connective lands where it lives, between two real ideas, not as an isolated flashcard.</p>
+      </div>
+      <div style="flex:1 1 400px; min-width:300px; display:flex; justify-content:center;">
+        <div style="width:384px; max-width:100%; position:relative; background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; box-shadow:0 20px 46px -26px rgba(30,42,68,.42); overflow:hidden;">
+          <div style="position:absolute; top:16px; bottom:16px; left:30px; width:1.5px; background:#C4362F; opacity:.45;"></div>
+          <div style="position:absolute; top:16px; bottom:16px; left:34px; width:1.5px; background:#C4362F; opacity:.16;"></div>
+          <div style="padding:20px 22px 12px 40px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#A69C82;">Connectives · complete the sentence</div>
+            <div style="font-family:'EB Garamond',serif; font-size:23px; color:#1E2A44; margin-top:11px; line-height:1.45;">Je voudrais un café <span style="display:inline-block; min-width:52px; text-align:center; color:#2E7D5B; border-bottom:2px solid #C9BEE6; padding:0 6px; font-style:italic;">et</span> un croissant.</div>
+            <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#8A8674; margin-top:8px;">“I'd like a coffee and a croissant.”</div>
+            <div style="height:1.5px; background:#C9BEE6; margin-top:13px;"></div>
+          </div>
+          <div style="padding:4px 22px 14px 40px; display:flex; flex-direction:column; gap:9px;">
+            <div style="display:flex; align-items:center; gap:13px; padding:12px 16px; border-radius:11px; border:1.5px solid #9BC6AF; background:#E9F2EC; min-height:48px;">
+              <span style="width:6px; height:6px; border-radius:50%; background:#C9BEE6; flex:none;"></span>
+              <span style="font-family:'EB Garamond',serif; font-size:22px; color:#1E2A44;">et</span>
+              <span style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:#8A8674;">and</span>
+              <span style="margin-left:auto; color:#2E7D5B; font-size:17px;">✓</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:13px; padding:12px 16px; border-radius:11px; border:1.5px solid #DACFEC; background:#FFFFFF; opacity:.42; min-height:48px;">
+              <span style="width:6px; height:6px; border-radius:50%; background:#C9BEE6; flex:none;"></span>
+              <span style="font-family:'EB Garamond',serif; font-size:22px; color:#1E2A44;">mais</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:13px; padding:12px 16px; border-radius:11px; border:1.5px solid #DACFEC; background:#FFFFFF; opacity:.42; min-height:48px;">
+              <span style="width:6px; height:6px; border-radius:50%; background:#C9BEE6; flex:none;"></span>
+              <span style="font-family:'EB Garamond',serif; font-size:22px; color:#1E2A44;">ou</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 05 · honest dashboard -->
+  <section style="max-width:1080px; margin:0 auto; padding:64px 32px;">
+    <div style="max-width:520px;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span style="font-family:'EB Garamond',serif; font-size:19px; color:#C4362F;">05</span>
+        <span style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#8C8776;">Progress · no XP</span>
+      </div>
+      <h2 style="font-family:'EB Garamond',serif; font-weight:500; font-size:32px; line-height:1.16; color:#1E2A44; margin:14px 0 0;">Honest numbers. No points to protect.</h2>
+      <p style="font-family:'Hanken Grotesk',sans-serif; font-size:16px; line-height:1.6; color:#55607A; margin:14px 0 0;">Your dashboard counts words you actually know, <i>X / 400</i>, never a vague percentage. A missed day is “welcome back,” not a broken streak. The cognate windfall is credited up front.</p>
+    </div>
+    <div style="margin-top:36px; display:flex; justify-content:center;">
+      <div style="width:820px; max-width:100%; background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; box-shadow:0 20px 46px -28px rgba(30,42,68,.4); overflow:hidden;">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:20px 30px; border-bottom:1px solid #EDE6D6;">
+          <div><div style="font-family:'EB Garamond',serif; font-size:22px; color:#C4362F; line-height:1;">Le Cahier</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#8A8674; margin-top:4px;">Your primer · Level 1</div></div>
+          <div style="font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:#55607A;"><span style="color:#C29A3B;">●</span> 7 days · <span style="color:#8A8674;">welcome back</span></div>
+        </div>
+        <div style="display:grid; grid-template-columns:1.05fr .95fr;">
+          <div style="padding:22px 30px; border-right:1px solid #EDE6D6; display:flex; flex-direction:column; gap:16px;">
+            <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#A69C82;">Coverage</div>
+            <div style="display:flex; align-items:center; gap:14px;"><div style="flex:1;"><div style="font-family:'EB Garamond',serif; font-size:18px; color:#1E2A44;">Verbs</div></div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:#55607A;">42 / 60</div><div style="width:100px; height:4px; background:#EDE6D6; border-radius:2px; overflow:hidden;"><div style="width:70%; height:100%; background:#435E7E;"></div></div></div>
+            <div style="display:flex; align-items:center; gap:14px;"><div style="flex:1;"><div style="font-family:'EB Garamond',serif; font-size:18px; color:#1E2A44;">Nouns</div></div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:#55607A;">55 / 150</div><div style="width:100px; height:4px; background:#EDE6D6; border-radius:2px; overflow:hidden;"><div style="width:37%; height:100%; background:#435E7E;"></div></div></div>
+            <div style="display:flex; align-items:center; gap:14px;"><div style="flex:1;"><div style="font-family:'EB Garamond',serif; font-size:18px; color:#1E2A44;">Cognates</div></div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:#55607A;">180 / 180</div><div style="width:100px; display:flex; justify-content:flex-end;"><span style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:#C29A3B;">✦ sealed</span></div></div>
+          </div>
+          <div style="padding:22px 30px; display:flex; flex-direction:column; gap:16px;">
+            <div style="background:#F4EFDF; border:1px solid #E4DBC2; border-radius:12px; padding:16px 18px;">
+              <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#B08A2E;">Cognate windfall</div>
+              <div style="font-family:'EB Garamond',serif; font-size:28px; color:#1E2A44; margin-top:4px; line-height:1.1;">~180 words <span style="font-size:15px; color:#8A8674;">already yours</span></div>
+            </div>
+            <div style="display:flex; gap:11px; align-items:flex-start;"><div style="width:8px; height:8px; border-radius:50%; background:#C29A3B; margin-top:6px; flex:none;"></div><div style="font-family:'EB Garamond',serif; font-size:16px; color:#1E2A44; line-height:1.4;">You can now build simple sentences.</div></div>
+          </div>
+        </div>
+        <div style="padding:15px 30px; border-top:1px solid #EDE6D6; background:#F7F2E4; display:flex; align-items:center; justify-content:space-between;">
+          <div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#B08A2E;">Level 1 · base vocabulary</div><div style="font-family:'EB Garamond',serif; font-size:19px; color:#1E2A44; margin-top:2px;">277 / 400 words toward your certificate</div></div>
+          <div style="width:48px; height:48px; border-radius:50%; background:radial-gradient(circle at 38% 34%, #E7C561, #C29A3B 60%, #9E7A26); box-shadow:0 4px 10px -3px rgba(120,90,20,.55), inset 0 1px 2px rgba(255,255,255,.45); display:flex; align-items:center; justify-content:center; color:#5E4712; font-family:'EB Garamond',serif; font-size:16px; transform:rotate(-8deg); flex:none;">N1</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 06 · graduate -->
+  <section style="background:#F4EFDF; border-top:1px solid #E4DBC2;">
+    <div style="max-width:1080px; margin:0 auto; padding:70px 32px; text-align:center;">
+      <div style="display:flex; align-items:center; gap:12px; justify-content:center;">
+        <span style="font-family:'EB Garamond',serif; font-size:19px; color:#C4362F;">06</span>
+        <span style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B08A2E;">Graduate</span>
+      </div>
+      <div style="width:72px; height:72px; margin:20px auto 0; border-radius:50%; background:radial-gradient(circle at 38% 34%, #E7C561, #C29A3B 60%, #9E7A26); box-shadow:0 6px 16px -5px rgba(120,90,20,.6), inset 0 1px 3px rgba(255,255,255,.5); display:flex; align-items:center; justify-content:center; color:#5E4712; font-family:'EB Garamond',serif; font-size:25px; transform:rotate(-8deg);">✦</div>
+      <h2 style="font-family:'EB Garamond',serif; font-weight:500; font-size:34px; line-height:1.14; color:#1E2A44; margin:22px auto 0; max-width:560px;">At 400 words, the primer's work is done.</h2>
+      <p style="font-family:'Hanken Grotesk',sans-serif; font-size:16px; line-height:1.6; color:#55607A; max-width:500px; margin:16px auto 0;">You leave with a certificate, every word you learned exported to CSV or Anki, and honest next steps, a grammar course, graded readers, a tutor. No upsell back to us. That's what built-to-graduate means.</p>
+      <div style="margin-top:30px;">
+        <a href="Le Cahier - Start Free.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:16px; font-weight:600; color:#FCFAF3; background:#1E2A44; border-radius:11px; padding:15px 32px; display:inline-block;" style-hover="color:#FCFAF3; background:#111a30">Start free</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid #EDE6D6; background:#FCFAF3;">
+    <div style="max-width:1080px; margin:0 auto; padding:36px 32px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+      <div><div style="font-family:'EB Garamond',serif; font-size:21px; color:#C4362F;">Le Cahier</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:#8A8674; margin-top:4px;">A French vocabulary primer, built to graduate you.</div></div>
+      <nav style="display:flex; gap:26px; flex-wrap:wrap;">
+        <a href="Le Cahier - Home.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:13.5px; color:#55607A;" style-hover="color:#1E2A44">Home</a>
+        <a href="Le Cahier - Pricing & FAQ.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:13.5px; color:#55607A;" style-hover="color:#1E2A44">Pricing &amp; FAQ</a>
+        <a href="Le Cahier - Start Free.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:13.5px; color:#55607A;" style-hover="color:#1E2A44">Start free</a>
+      </nav>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

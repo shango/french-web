@@ -1,0 +1,72 @@
+---
+// Le Cahier button / link. Renders an <a> (navigation) styled per the design system.
+// variant: primary (ink fill) · secondary (violet outline) · text (red text-link + chevron).
+interface Props {
+  href: string
+  variant?: 'primary' | 'secondary' | 'text'
+  size?: 'md' | 'lg'
+  class?: string
+}
+const { href, variant = 'primary', size = 'md', class: className = '' } = Astro.props
+const showChevron = variant === 'text'
+---
+
+<a href={href} class:list={['btn', `btn--${variant}`, `btn--${size}`, className]}>
+  <slot />
+  {showChevron && (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+  )}
+</a>
+
+<style>
+  .btn {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: var(--radius-control);
+    transition: background var(--transition-state), color var(--transition-state);
+    white-space: nowrap;
+  }
+  .btn--md {
+    font-size: 15px;
+    padding: 14px 26px;
+  }
+  .btn--lg {
+    font-size: 16px;
+    padding: 16px 34px;
+  }
+
+  /* Primary: ink fill, paper text. */
+  .btn--primary {
+    color: var(--paper);
+    background: var(--ink);
+  }
+  .btn--primary:hover {
+    color: var(--paper);
+    background: #111a30;
+  }
+
+  /* Secondary: violet outline on paper. */
+  .btn--secondary {
+    color: var(--ink);
+    background: var(--paper-white);
+    border: 1.5px solid var(--row-border);
+    padding-block: calc(14px - 1.5px);
+  }
+  .btn--secondary:hover {
+    color: var(--ink);
+    background: var(--row-hover);
+  }
+
+  /* Text link: red, with a chevron. Not a filled control. */
+  .btn--text {
+    color: var(--ink);
+    padding: 0;
+    font-size: 15px;
+  }
+  .btn--text:hover {
+    color: var(--red);
+  }
+</style>

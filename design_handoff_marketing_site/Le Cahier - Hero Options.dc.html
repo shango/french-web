@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#E7E3D9; font-family:'Hanken Grotesk',system-ui,sans-serif; -webkit-font-smoothing:antialiased; color:#1E2A44; }
+  a{ color:#C4362F; text-decoration:none; }
+  a:hover{ color:#9E2A24; }
+</style>
+</helmet>
+
+<div style="padding:48px 48px 90px; display:flex; flex-direction:column; gap:46px;">
+
+  <div style="max-width:760px;">
+    <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#8C8776;">Le Cahier · marketing site</div>
+    <div style="font-family:'EB Garamond',serif; font-size:34px; color:#1E2A44; margin-top:8px; line-height:1.15;">Two hero directions for Home</div>
+    <div style="font-family:'Hanken Grotesk',sans-serif; font-size:15px; color:#6B665A; margin-top:10px; line-height:1.6;">Both inherit the app system exactly. <b>1a</b> is what's live on the Home page now. Tell me which to keep, or mix, and I'll lock it in.</div>
+  </div>
+
+  <!-- ============ OPTION 1a ============ -->
+  <div id="1a" style="scroll-margin-top:24px;">
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <span style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; font-weight:700; letter-spacing:.08em; color:#FCFAF3; background:#C4362F; border-radius:6px; padding:4px 10px;">1a</span>
+      <span style="font-family:'Hanken Grotesk',sans-serif; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#6B665A;">The word on the ruled line · <span style="color:#8A8674; text-transform:none; letter-spacing:0;">currently live</span></span>
+    </div>
+    <div style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; box-shadow:0 20px 50px -30px rgba(30,42,68,.5); overflow:hidden;">
+      <div style="padding:64px 60px; display:flex; gap:56px; align-items:center; flex-wrap:wrap;">
+        <div style="flex:1 1 360px; min-width:300px;">
+          <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#8C8776;">French vocabulary, written by hand</div>
+          <div style="font-family:'EB Garamond',serif; font-weight:500; font-size:50px; line-height:1.1; color:#1E2A44; margin:16px 0 0; letter-spacing:-.01em;">A real base in French, then we wave you off.</div>
+          <div style="font-family:'Hanken Grotesk',sans-serif; font-size:17px; line-height:1.6; color:#55607A; max-width:460px; margin:18px 0 0;">Learn the ~400 words that actually carry a conversation. When you have them, we hand you a certificate, your word list, and where to go next, and let you leave.</div>
+          <div style="display:flex; align-items:center; gap:16px; margin-top:28px; flex-wrap:wrap;">
+            <span style="font-family:'Hanken Grotesk',sans-serif; font-size:15px; font-weight:600; color:#FCFAF3; background:#1E2A44; border-radius:10px; padding:14px 26px;">Start free</span>
+            <span style="font-family:'Hanken Grotesk',sans-serif; font-size:15px; font-weight:600; color:#1E2A44; display:inline-flex; align-items:center; gap:7px;">See how it works
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+          </div>
+        </div>
+        <div style="flex:1 1 380px; min-width:300px;">
+          <div style="position:relative; background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; box-shadow:0 24px 54px -30px rgba(30,42,68,.5); padding:46px 44px 40px 58px; overflow:hidden;">
+            <div style="position:absolute; top:20px; bottom:20px; left:34px; width:1.5px; background:#C4362F; opacity:.4;"></div>
+            <div style="position:absolute; top:20px; bottom:20px; left:38px; width:1.5px; background:#C4362F; opacity:.14;"></div>
+            <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#A69C82;">Leçon 1 · le premier mot</div>
+            <div style="margin-top:26px; padding-bottom:12px; border-bottom:2px solid #C9BEE6;"><span style="font-family:'EB Garamond',serif; font-size:60px; line-height:1; color:#1E2A44;">commencer</span></div>
+            <div style="display:flex; align-items:baseline; gap:10px; margin-top:12px;"><span style="font-family:'EB Garamond',serif; font-style:italic; font-size:20px; color:#8B5A78;">verbe</span><span style="font-family:'Hanken Grotesk',sans-serif; font-size:15px; color:#55607A;">· to begin</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ OPTION 1b ============ -->
+  <div id="1b" style="scroll-margin-top:24px;">
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <span style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; font-weight:700; letter-spacing:.08em; color:#FCFAF3; background:#1E2A44; border-radius:6px; padding:4px 10px;">1b</span>
+      <span style="font-family:'Hanken Grotesk',sans-serif; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#6B665A;">The counter-positioning, stated plainly</span>
+    </div>
+    <div style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; box-shadow:0 20px 50px -30px rgba(30,42,68,.5); overflow:hidden;">
+      <div style="position:relative; padding:78px 60px; text-align:center; overflow:hidden;">
+        <div style="position:absolute; top:28px; bottom:28px; left:44px; width:1.5px; background:#C4362F; opacity:.32;"></div>
+        <div style="position:absolute; top:28px; bottom:28px; left:48px; width:1.5px; background:#C4362F; opacity:.12;"></div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#8C8776;">Built to graduate you, not retain you</div>
+        <div style="max-width:760px; margin:20px auto 0;">
+          <span style="font-family:'EB Garamond',serif; font-weight:500; font-size:60px; line-height:1.12; color:#1E2A44; letter-spacing:-.015em;">Learn a real French base.<br><span style="display:inline-block; padding-bottom:10px; border-bottom:3px solid #C9BEE6;">Then leave.</span></span>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:17px; line-height:1.6; color:#55607A; max-width:540px; margin:30px auto 0;">Most apps are built to keep you subscribed forever. This one is built to end, in a certificate, an export of every word you learned, and an honest push toward what's next. Leaving with a base you can build on is the win.</div>
+        <div style="display:flex; align-items:center; gap:16px; margin-top:30px; justify-content:center; flex-wrap:wrap;">
+          <span style="font-family:'Hanken Grotesk',sans-serif; font-size:15px; font-weight:600; color:#FCFAF3; background:#1E2A44; border-radius:10px; padding:14px 26px;">Start free</span>
+          <span style="font-family:'Hanken Grotesk',sans-serif; font-size:15px; font-weight:600; color:#1E2A44; display:inline-flex; align-items:center; gap:7px;">See how it works
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

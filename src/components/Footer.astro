@@ -1,0 +1,56 @@
+---
+import { WORDMARK, FOOTER_LINKS } from '../consts'
+---
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="brand">
+      <div class="fw">{WORDMARK}</div>
+      <div class="tag">A French vocabulary primer, built to graduate you.</div>
+    </div>
+    <nav class="flinks" aria-label="Footer">
+      {FOOTER_LINKS.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--hairline);
+    background: var(--paper);
+  }
+  .inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 36px var(--content-pad-x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .fw {
+    font-family: var(--font-serif);
+    font-size: 21px;
+    color: var(--red);
+  }
+  .tag {
+    font-family: var(--font-sans);
+    font-size: var(--fs-label);
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+  .flinks {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+  .flinks a {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+  .flinks a:hover {
+    color: var(--ink);
+  }
+</style>

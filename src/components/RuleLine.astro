@@ -1,0 +1,19 @@
+---
+// The violet Seyes ruling line - under headings, as underlines, as a divider accent.
+interface Props {
+  width?: string // e.g. '60px' or '100%'
+  height?: number
+  class?: string
+}
+const { width = '100%', height = 2, class: className = '' } = Astro.props
+---
+
+<span class:list={['rule', className]} style={`width:${width}; height:${height}px;`} aria-hidden="true"></span>
+
+<style>
+  .rule {
+    display: block;
+    background: var(--rule-violet);
+    border-radius: 1px;
+  }
+</style>

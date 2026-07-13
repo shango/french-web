@@ -1,0 +1,763 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Section from '../components/Section.astro'
+import Button from '../components/Button.astro'
+import Seal from '../components/Seal.astro'
+import StepHead from '../components/StepHead.astro'
+import NounCard from '../components/showcase/NounCard.astro'
+import { START_HREF } from '../consts'
+
+const title = 'How it works'
+const description =
+  'The honest loop you will actually run, shown in the real app screens: pick a reason, find a deck, tap to answer, learn connectives in context, watch honest progress, then graduate.'
+---
+
+<BaseLayout title={title} description={description}>
+  {/* ===================== INTRO ===================== */}
+  <Section py="70px" center>
+    <div class="intro">
+      <div class="eyebrow">How it works</div>
+      <h1 class="intro-h1">The method is the pitch. So here it is, in full.</h1>
+      <p class="intro-sub">No testimonials, no funnel. Just the honest loop you'll actually run, the same screens you'll see the day you start.</p>
+    </div>
+  </Section>
+
+  {/* ===================== STEP 01 · a gentle start ===================== */}
+  <Section py="56px">
+    <div class="step">
+      <div class="step-copy">
+        <StepHead num="01" label="A gentle start" title="Tell us why, then everyone learns the same base.">
+          Travel, work, family, or plain curiosity only re-orders and flavours your first words. There's no branching maze, one honest path to 400 words. Already know some French? Prove it in two minutes and skip ahead.
+        </StepHead>
+      </div>
+      <div class="step-surface">
+        <div class="onboard">
+          <div class="ob-eyebrow">A gentle start</div>
+          <div class="ob-q">Why are you learning French?</div>
+          <div class="ob-tiles">
+            <div class="tile tile--sel">
+              <span class="radio radio--on" aria-hidden="true">✓</span>
+              <div><div class="tile-name">Travel</div><div class="tile-sub">Menus, directions, a warm bonjour.</div></div>
+            </div>
+            <div class="tile">
+              <span class="radio" aria-hidden="true"></span>
+              <div><div class="tile-name">Work</div><div class="tile-sub">Email, meetings, introductions.</div></div>
+            </div>
+            <div class="tile">
+              <span class="radio" aria-hidden="true"></span>
+              <div><div class="tile-name">Just curious</div><div class="tile-sub">The quiet joy of a new language.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  {/* ===================== STEP 02 · find a deck ===================== */}
+  <Section band="desk" py="64px">
+    <div class="step step--reverse">
+      <div class="step-copy">
+        <StepHead num="02" label="Find a deck" title="High-frequency first. A base, then the glue.">
+          Verbs and nouns you'll use every day come first. Cognates are the fast win. Connectives, the little words that join sentences, stay locked until you have a base to attach them to, so they land in context, not in a vacuum.
+        </StepHead>
+      </div>
+      <div class="step-surface step-surface--wide">
+        <div class="deckgrid">
+          <div class="deck">
+            <div class="deck-top"><span class="deck-name">Verbs</span><span class="deck-count">42 / 60</span></div>
+            <div class="deck-sub">everyday actions</div>
+            <div class="deck-bar"><span style="width:70%"></span></div>
+          </div>
+          <div class="deck">
+            <div class="deck-top"><span class="deck-name">Nouns</span>
+              <span class="chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg></span>
+            </div>
+            <div class="deck-sub">5 situations</div>
+            <div class="deck-count deck-count--below">55 / 150</div>
+          </div>
+          <div class="deck deck--sealed">
+            <div class="deck-top"><span class="deck-name">Cognates</span><Seal size={28} label="✦" /></div>
+            <div class="deck-sub deck-sub--gold">mastered, sealed</div>
+            <div class="deck-count deck-count--below">180 / 180</div>
+          </div>
+          <div class="deck deck--locked">
+            <div class="deck-name deck-name--locked">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B3AE9C" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>Connectives
+            </div>
+            <div class="deck-sub">Learn 25 more words to unlock.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  {/* ===================== STEP 03 · tap to answer ===================== */}
+  <Section py="64px">
+    <div class="step">
+      <div class="step-copy">
+        <StepHead num="03" label="Study · tap to answer" title="Nouns come with their gender, drilled in the ordinary card.">
+          The row is the control, no submit button, no radio dots. Tap the French and it grades instantly. The natural distractor is the right noun with the <i>wrong article</i>, so <span class="tint-le">le</span> vs <span class="tint-la">la</span> gets learned without ever a separate "le or la?" quiz.
+        </StepHead>
+      </div>
+      <div class="step-surface">
+        <NounCard
+          eyebrow="Nouns · tap the French"
+          prompt="the house"
+          audio={false}
+          tone="wrong"
+          options={[
+            { article: 'le', word: 'maison', state: 'wrong' },
+            { article: 'la', word: 'maison', gloss: 'house', state: 'correct' },
+            { article: 'la', word: 'porte', state: 'dim' },
+          ]}
+        >
+          <Fragment slot="feedback"><span class="fb-ink">It's <i class="tint-la">la</i> maison, feminine. <span class="fb-muted">gently noted.</span></span></Fragment>
+        </NounCard>
+      </div>
+    </div>
+  </Section>
+
+  {/* ===================== STEP 04 · in context ===================== */}
+  <Section band="desk" py="64px">
+    <div class="step step--reverse">
+      <div class="step-copy">
+        <StepHead num="04" label="Study · in context" title="Connectives are taught inside real sentences.">
+          Every carrier sentence is built only from words you already know, so a connective lands where it lives, between two real ideas, not as an isolated flashcard.
+        </StepHead>
+      </div>
+      <div class="step-surface">
+        <div class="ccard">
+          <span class="pm pm--a" aria-hidden="true"></span>
+          <span class="pm pm--b" aria-hidden="true"></span>
+          <div class="ccard-head">
+            <div class="ccard-eyebrow">Connectives · complete the sentence</div>
+            <div class="carrier">Je voudrais un café <span class="blank">et</span> un croissant.</div>
+            <div class="carrier-en">"I'd like a coffee and a croissant."</div>
+            <div class="ccard-rule"></div>
+          </div>
+          <div class="ccard-opts">
+            <div class="crow crow--correct">
+              <span class="cdot"></span><span class="cword">et</span><span class="cgloss">and</span><span class="cmark">✓</span>
+            </div>
+            <div class="crow crow--dim"><span class="cdot"></span><span class="cword">mais</span></div>
+            <div class="crow crow--dim"><span class="cdot"></span><span class="cword">ou</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  {/* ===================== STEP 05 · honest dashboard ===================== */}
+  <Section py="64px">
+    <div class="step05-head">
+      <StepHead num="05" label="Progress · no XP" title="Honest numbers. No points to protect.">
+        <span class="wide-body">Your dashboard counts words you actually know, <i>X / 400</i>, never a vague percentage. A missed day is "welcome back," not a broken streak. The cognate windfall is credited up front.</span>
+      </StepHead>
+    </div>
+    <div class="dash-center">
+      <div class="wdash">
+        <div class="wdash-head">
+          <div>
+            <div class="wm">Le Cahier</div>
+            <div class="wm-sub">Your primer · Level 1</div>
+          </div>
+          <div class="streak"><span class="dotg">●</span> 7 days · <span class="wb">welcome back</span></div>
+        </div>
+        <div class="wdash-grid">
+          <div class="wcol wcol--left">
+            <div class="wcol-eyebrow">Coverage</div>
+            <div class="wrow"><div class="wrow-name">Verbs</div><div class="wrow-count">42 / 60</div><div class="wbar"><span style="width:70%"></span></div></div>
+            <div class="wrow"><div class="wrow-name">Nouns</div><div class="wrow-count">55 / 150</div><div class="wbar"><span style="width:37%"></span></div></div>
+            <div class="wrow"><div class="wrow-name">Cognates</div><div class="wrow-count">180 / 180</div><div class="wsealed"><span>✦ sealed</span></div></div>
+          </div>
+          <div class="wcol">
+            <div class="windfall-panel">
+              <div class="wp-eyebrow">Cognate windfall</div>
+              <div class="wp-num">~180 words <span>already yours</span></div>
+            </div>
+            <div class="wp-note"><span class="wp-dot"></span><span class="wp-text">You can now build simple sentences.</span></div>
+          </div>
+        </div>
+        <div class="wdash-grad">
+          <div>
+            <div class="wg-eyebrow">Level 1 · base vocabulary</div>
+            <div class="wg-text">277 / 400 words toward your certificate</div>
+          </div>
+          <Seal size={48} label="N1" />
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  {/* ===================== STEP 06 · graduate ===================== */}
+  <Section band="windfall" py="70px" center>
+    <div class="grad-tag">
+      <span class="grad-num">06</span>
+      <span class="grad-label">Graduate</span>
+    </div>
+    <div class="grad-seal"><Seal size={72} label="✦" /></div>
+    <h2 class="grad-h2">At 400 words, the primer's work is done.</h2>
+    <p class="grad-body">You leave with a certificate, every word you learned exported to CSV or Anki, and honest next steps, a grammar course, graded readers, a tutor. No upsell back to us. That's what built-to-graduate means.</p>
+    <div class="grad-cta">
+      <Button href={START_HREF} variant="primary" size="lg">Start free</Button>
+    </div>
+  </Section>
+</BaseLayout>
+
+<style>
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8c8776;
+  }
+  .intro-h1 {
+    font-family: var(--font-serif);
+    font-size: 48px;
+    line-height: 1.1;
+    margin: 16px auto 0;
+    max-width: 680px;
+  }
+  .intro-sub {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin: 18px auto 0;
+  }
+
+  /* Step two-column layout */
+  .step {
+    display: flex;
+    gap: 56px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .step--reverse {
+    flex-direction: row-reverse;
+  }
+  .step-copy {
+    flex: 1 1 340px;
+    min-width: 300px;
+  }
+  .step-surface {
+    flex: 1 1 400px;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+  }
+  .step-surface--wide {
+    flex-basis: 420px;
+  }
+
+  .tint-le {
+    color: var(--le);
+  }
+  .tint-la {
+    color: var(--la);
+  }
+
+  /* Step 03 feedback overrides (ink text + muted note) */
+  .fb-ink {
+    color: var(--ink);
+    font-size: 15.5px;
+  }
+  .fb-muted {
+    color: var(--ink-muted-2);
+    font-family: var(--font-sans);
+    font-size: 12px;
+  }
+
+  /* ---------- Onboard card (step 01) ---------- */
+  .onboard {
+    width: 400px;
+    max-width: 100%;
+    background: var(--paper);
+    border: 1px solid var(--hairline-2);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 26px 26px 22px;
+  }
+  .ob-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted-2);
+  }
+  .ob-q {
+    font-family: var(--font-serif);
+    font-size: 25px;
+    color: var(--ink);
+    margin-top: 8px;
+  }
+  .ob-tiles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .tile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 15px;
+    border-radius: 12px;
+    border: 1.5px solid var(--hairline-2);
+    background: var(--paper-white);
+  }
+  .tile--sel {
+    border-color: var(--la);
+    background: var(--row-hover);
+  }
+  .radio {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid var(--row-border);
+    background: var(--paper-white);
+    flex: none;
+  }
+  .radio--on {
+    border-color: var(--la);
+    background: var(--la);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--paper);
+    font-size: 12px;
+  }
+  .tile-name {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .tile-sub {
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    color: var(--ink-muted);
+  }
+
+  /* ---------- Deck grid (step 02) ---------- */
+  .deckgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    width: 100%;
+  }
+  .deck {
+    background: var(--paper);
+    border: 1px solid var(--hairline-2);
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: var(--shadow-tile);
+  }
+  .deck--sealed {
+    border-color: var(--windfall-border);
+  }
+  .deck--locked {
+    background: var(--locked-bg);
+    border: 1px dashed var(--locked-border);
+    box-shadow: none;
+  }
+  .deck-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .deck-name {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    color: var(--ink);
+  }
+  .deck-name--locked {
+    color: var(--ink-muted);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .deck-count {
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .deck-count--below {
+    margin-top: 14px;
+  }
+  .deck-sub {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--ink-muted-2);
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+  .deck--locked .deck-sub {
+    margin-top: 4px;
+  }
+  .deck-sub--gold {
+    color: var(--gold-label);
+  }
+  .chev {
+    color: var(--la);
+    display: flex;
+  }
+  .deck-bar {
+    height: 4px;
+    background: var(--hairline);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 14px;
+  }
+  .deck-bar span {
+    display: block;
+    height: 100%;
+    background: var(--le);
+  }
+
+  /* ---------- Connective card (step 04) ---------- */
+  .ccard {
+    width: 384px;
+    max-width: 100%;
+    position: relative;
+    background: var(--paper);
+    border: 1px solid var(--hairline-2);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+  }
+  .pm {
+    position: absolute;
+    top: 16px;
+    bottom: 16px;
+    width: 1.5px;
+    background: var(--red);
+  }
+  .pm--a {
+    left: 30px;
+    opacity: 0.45;
+  }
+  .pm--b {
+    left: 34px;
+    opacity: 0.16;
+  }
+  .ccard-head {
+    padding: 20px 22px 12px 40px;
+  }
+  .ccard-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted-2);
+  }
+  .carrier {
+    font-family: var(--font-serif);
+    font-size: 23px;
+    color: var(--ink);
+    margin-top: 11px;
+    line-height: 1.45;
+  }
+  .blank {
+    display: inline-block;
+    min-width: 52px;
+    text-align: center;
+    color: var(--green);
+    border-bottom: 2px solid var(--rule-violet);
+    padding: 0 6px;
+    font-style: italic;
+  }
+  .carrier-en {
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    margin-top: 8px;
+  }
+  .ccard-rule {
+    height: 1.5px;
+    background: var(--rule-violet);
+    margin-top: 13px;
+  }
+  .ccard-opts {
+    padding: 4px 22px 14px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .crow {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px 16px;
+    border-radius: 11px;
+    border: 1.5px solid var(--row-border);
+    background: var(--paper-white);
+    min-height: 48px;
+  }
+  .crow--correct {
+    border-color: var(--green-border);
+    background: var(--green-bg);
+  }
+  .crow--dim {
+    opacity: 0.42;
+  }
+  .cdot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rule-violet);
+    flex: none;
+  }
+  .cword {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    color: var(--ink);
+  }
+  .cgloss {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+  .cmark {
+    margin-left: auto;
+    color: var(--green);
+    font-size: 17px;
+  }
+
+  /* ---------- Wide dashboard (step 05) ---------- */
+  .step05-head {
+    max-width: 520px;
+  }
+  .wide-body {
+    display: block;
+    max-width: none;
+  }
+  .dash-center {
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+  }
+  .wdash {
+    width: 820px;
+    max-width: 100%;
+    background: var(--paper);
+    border: 1px solid var(--hairline-2);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+  }
+  .wdash-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--hairline);
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .wm {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    color: var(--red);
+    line-height: 1;
+  }
+  .wm-sub {
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+  .streak {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .dotg {
+    color: var(--gold);
+  }
+  .wb {
+    color: var(--ink-muted);
+  }
+  .wdash-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+  .wcol {
+    padding: 22px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .wcol--left {
+    border-right: 1px solid var(--hairline);
+  }
+  .wcol-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted-2);
+  }
+  .wrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .wrow-name {
+    flex: 1;
+    font-family: var(--font-serif);
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .wrow-count {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .wbar {
+    width: 100px;
+    height: 4px;
+    background: var(--hairline);
+    border-radius: 2px;
+    overflow: hidden;
+    flex: none;
+  }
+  .wbar span {
+    display: block;
+    height: 100%;
+    background: var(--le);
+  }
+  .wsealed {
+    width: 100px;
+    display: flex;
+    justify-content: flex-end;
+    flex: none;
+  }
+  .wsealed span {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--gold);
+  }
+  .windfall-panel {
+    background: var(--windfall-bg);
+    border: 1px solid var(--windfall-border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .wp-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-label);
+  }
+  .wp-num {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    color: var(--ink);
+    margin-top: 4px;
+    line-height: 1.1;
+  }
+  .wp-num span {
+    font-size: 15px;
+    color: var(--ink-muted);
+  }
+  .wp-note {
+    display: flex;
+    gap: 11px;
+    align-items: flex-start;
+  }
+  .wp-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 6px;
+    flex: none;
+  }
+  .wp-text {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .wdash-grad {
+    padding: 15px 30px;
+    border-top: 1px solid var(--hairline);
+    background: var(--grad-strip-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .wg-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-label);
+  }
+  .wg-text {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    color: var(--ink);
+    margin-top: 2px;
+  }
+
+  /* ---------- Graduate (step 06) ---------- */
+  .grad-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+  }
+  .grad-num {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    color: var(--red);
+  }
+  .grad-label {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-label);
+  }
+  .grad-seal {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .grad-h2 {
+    font-family: var(--font-serif);
+    font-size: 34px;
+    line-height: 1.14;
+    margin: 22px auto 0;
+    max-width: 560px;
+  }
+  .grad-body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 500px;
+    margin: 16px auto 0;
+  }
+  .grad-cta {
+    margin-top: 30px;
+  }
+
+  @media (max-width: 640px) {
+    .intro-h1 {
+      font-size: 34px;
+    }
+    .wdash-grid {
+      grid-template-columns: 1fr;
+    }
+    .wcol--left {
+      border-right: none;
+      border-bottom: 1px solid var(--hairline);
+    }
+  }
+</style>

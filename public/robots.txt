@@ -1,0 +1,5 @@
+# Le Cahier marketing site - allow everything; the whole site is public.
+User-agent: *
+Allow: /
+
+Sitemap: https://lecahier.app/sitemap-index.xml

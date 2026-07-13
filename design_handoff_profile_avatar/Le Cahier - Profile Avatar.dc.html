@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#E7E3D9; font-family:'Hanken Grotesk',system-ui,sans-serif; -webkit-font-smoothing:antialiased; color:#1E2A44; }
+  a{ color:#C4362F; text-decoration:none; }
+  a:hover{ color:#9E2A24; }
+</style>
+</helmet>
+
+<div style="padding:52px 48px 90px; max-width:1000px; margin:0 auto;">
+
+  <!-- intro -->
+  <div style="max-width:680px;">
+    <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#8C8776;">Le Cahier · shared element</div>
+    <div style="font-family:'EB Garamond',serif; font-size:36px; color:#1E2A44; margin-top:8px; line-height:1.12;">Default profile avatar</div>
+    <div style="font-family:'Hanken Grotesk',sans-serif; font-size:15px; color:#6B665A; margin-top:10px; line-height:1.6;">A calm, paper-and-ink stand-in for users without a photo. A paper disc, a violet ruling ring, and either an ink portrait drawn by hand or the person's initials in EB Garamond. Two variants, one system, for both the app and the site.</div>
+  </div>
+
+  <!-- HERO: two variants at 128 -->
+  <div style="display:flex; gap:24px; flex-wrap:wrap; margin-top:40px;">
+    <div style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; box-shadow:0 16px 40px -28px rgba(30,42,68,.5); padding:34px 40px; display:flex; flex-direction:column; align-items:center; gap:16px;">
+      <!-- ANON 128 -->
+      <div style="width:128px; height:128px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.5px #C9BEE6; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+        <svg width="128" height="128" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="7.2" stroke="#1E2A44" stroke-width="2.2"/><path d="M12 38C12 30.5 17.4 26 24 26C30.6 26 36 30.5 36 38" stroke="#1E2A44" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </div>
+      <div style="text-align:center;"><div style="font-family:'EB Garamond',serif; font-size:19px; color:#1E2A44;">Ink portrait</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#8A8674; margin-top:2px;">default, no name yet</div></div>
+    </div>
+
+    <div style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; box-shadow:0 16px 40px -28px rgba(30,42,68,.5); padding:34px 40px; display:flex; flex-direction:column; align-items:center; gap:16px;">
+      <!-- MONOGRAM 128 -->
+      <div style="width:128px; height:128px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.5px #C9BEE6; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden;">
+        <div style="font-family:'EB Garamond',serif; font-weight:500; font-size:54px; color:#1E2A44; line-height:1;">A</div>
+        <div style="width:44px; height:1.5px; background:#C9BEE6; margin-top:9px; border-radius:1px;"></div>
+      </div>
+      <div style="text-align:center;"><div style="font-family:'EB Garamond',serif; font-size:19px; color:#1E2A44;">Monogram</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#8A8674; margin-top:2px;">when a name is known</div></div>
+    </div>
+  </div>
+
+  <!-- SIZE RAMP -->
+  <div style="margin-top:44px;">
+    <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#8C8776; margin-bottom:18px;">Size ramp · renders crisp at every size</div>
+    <div style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; padding:30px 34px; display:flex; align-items:flex-end; gap:34px; flex-wrap:wrap;">
+      <!-- 96 -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <div style="width:96px; height:96px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.5px #C9BEE6; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <svg width="96" height="96" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="7.2" stroke="#1E2A44" stroke-width="2.2"/><path d="M12 38C12 30.5 17.4 26 24 26C30.6 26 36 30.5 36 38" stroke="#1E2A44" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:#8A8674;">96</div>
+      </div>
+      <!-- 64 -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <div style="width:64px; height:64px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.5px #C9BEE6; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <svg width="64" height="64" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="7.2" stroke="#1E2A44" stroke-width="2.2"/><path d="M12 38C12 30.5 17.4 26 24 26C30.6 26 36 30.5 36 38" stroke="#1E2A44" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:#8A8674;">64</div>
+      </div>
+      <!-- 48 -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <div style="width:48px; height:48px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.5px #C9BEE6; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="7.2" stroke="#1E2A44" stroke-width="2.2"/><path d="M12 38C12 30.5 17.4 26 24 26C30.6 26 36 30.5 36 38" stroke="#1E2A44" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:#8A8674;">48</div>
+      </div>
+      <!-- 32 monogram -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <div style="width:32px; height:32px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.25px #C9BEE6; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <div style="font-family:'EB Garamond',serif; font-weight:500; font-size:15px; color:#1E2A44; line-height:1;">A</div>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:#8A8674;">32</div>
+      </div>
+      <!-- 24 monogram -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <div style="width:24px; height:24px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1px #C9BEE6; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <div style="font-family:'EB Garamond',serif; font-weight:500; font-size:12px; color:#1E2A44; line-height:1;">A</div>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:#8A8674;">24</div>
+      </div>
+      <div style="flex:1; min-width:180px; font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:#8A8674; line-height:1.55; align-self:center;">Below ~40px, drop the underline rule (and prefer the monogram over the portrait) so the mark stays legible.</div>
+    </div>
+  </div>
+
+  <!-- ACCENTS -->
+  <div style="margin-top:44px;">
+    <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#8C8776; margin-bottom:18px;">Accent · assign deterministically per user (so an avatar is stable)</div>
+    <div style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; padding:30px 34px; display:flex; gap:30px; flex-wrap:wrap;">
+      <!-- ink -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <div style="width:72px; height:72px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.5px #C9BEE6; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden;">
+          <div style="font-family:'EB Garamond',serif; font-weight:500; font-size:31px; color:#1E2A44; line-height:1;">M</div>
+          <div style="width:26px; height:1.5px; background:#C9BEE6; margin-top:6px; border-radius:1px;"></div>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11.5px; color:#8A8674;">ink · #1E2A44</div>
+      </div>
+      <!-- le -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <div style="width:72px; height:72px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.5px #C9BEE6; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden;">
+          <div style="font-family:'EB Garamond',serif; font-weight:500; font-size:31px; color:#435E7E; line-height:1;">L</div>
+          <div style="width:26px; height:1.5px; background:#C9BEE6; margin-top:6px; border-radius:1px;"></div>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11.5px; color:#8A8674;">slate · #435E7E</div>
+      </div>
+      <!-- la -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <div style="width:72px; height:72px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.5px #C9BEE6; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden;">
+          <div style="font-family:'EB Garamond',serif; font-weight:500; font-size:31px; color:#8B5A78; line-height:1;">C</div>
+          <div style="width:26px; height:1.5px; background:#C9BEE6; margin-top:6px; border-radius:1px;"></div>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11.5px; color:#8A8674;">plum · #8B5A78</div>
+      </div>
+      <!-- gold -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <div style="width:72px; height:72px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.5px #C9BEE6; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden;">
+          <div style="font-family:'EB Garamond',serif; font-weight:500; font-size:31px; color:#B08A2E; line-height:1;">R</div>
+          <div style="width:26px; height:1.5px; background:#C9BEE6; margin-top:6px; border-radius:1px;"></div>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11.5px; color:#8A8674;">gold · #B08A2E</div>
+      </div>
+      <!-- ink portrait accent -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <div style="width:72px; height:72px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.5px #C9BEE6; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <svg width="72" height="72" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="7.2" stroke="#435E7E" stroke-width="2.2"/><path d="M12 38C12 30.5 17.4 26 24 26C30.6 26 36 30.5 36 38" stroke="#435E7E" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11.5px; color:#8A8674;">portrait · slate</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IN CONTEXT -->
+  <div style="margin-top:44px;">
+    <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#8C8776; margin-bottom:18px;">In context</div>
+    <div style="display:flex; gap:20px; flex-wrap:wrap;">
+      <!-- on paper: dashboard header row -->
+      <div style="flex:1 1 300px; min-width:280px; background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; box-shadow:0 16px 40px -28px rgba(30,42,68,.5); overflow:hidden;">
+        <div style="padding:18px 22px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #EDE6D6;">
+          <div style="font-family:'EB Garamond',serif; font-size:20px; color:#C4362F;">Le Cahier</div>
+          <div style="display:flex; align-items:center; gap:11px;">
+            <span style="font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:#55607A;">Welcome back</span>
+            <div style="width:36px; height:36px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.5px #C9BEE6; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+              <svg width="36" height="36" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="7.2" stroke="#1E2A44" stroke-width="2.2"/><path d="M12 38C12 30.5 17.4 26 24 26C30.6 26 36 30.5 36 38" stroke="#1E2A44" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <div style="padding:20px 22px; font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:#8A8674;">On paper — the default ground for both app and site.</div>
+      </div>
+
+      <!-- on ink: works on dark too -->
+      <div style="flex:1 1 300px; min-width:280px; background:#1E2A44; border-radius:16px; box-shadow:0 16px 40px -28px rgba(30,42,68,.5); overflow:hidden;">
+        <div style="padding:22px; display:flex; align-items:center; gap:14px;">
+          <div style="width:52px; height:52px; border-radius:50%; background:#FCFAF3; box-shadow:inset 0 0 0 1.5px #C9BEE6; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden; flex:none;">
+            <div style="font-family:'EB Garamond',serif; font-weight:500; font-size:23px; color:#1E2A44; line-height:1;">A</div>
+            <div style="width:18px; height:1.5px; background:#C9BEE6; margin-top:4px; border-radius:1px;"></div>
+          </div>
+          <div>
+            <div style="font-family:'EB Garamond',serif; font-size:19px; color:#FCFAF3;">Amélie</div>
+            <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#C9BEE6;">Level 1 · 277 / 400</div>
+          </div>
+        </div>
+        <div style="padding:0 22px 20px; font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:#A9B0C4;">On ink — the paper disc keeps it readable on dark headers.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DO / DON'T -->
+  <div style="margin-top:44px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;">
+    <div style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; padding:24px 26px;">
+      <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#2E7D5B; margin-bottom:14px;">Do</div>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:11px;">
+        <li style="display:flex; gap:11px; font-family:'Hanken Grotesk',sans-serif; font-size:14px; line-height:1.5; color:#1E2A44;"><span style="color:#2E7D5B; flex:none;">✓</span> Keep the paper disc + single violet ring on every ground</li>
+        <li style="display:flex; gap:11px; font-family:'Hanken Grotesk',sans-serif; font-size:14px; line-height:1.5; color:#1E2A44;"><span style="color:#2E7D5B; flex:none;">✓</span> Prefer the monogram once a name exists; portrait otherwise</li>
+        <li style="display:flex; gap:11px; font-family:'Hanken Grotesk',sans-serif; font-size:14px; line-height:1.5; color:#1E2A44;"><span style="color:#2E7D5B; flex:none;">✓</span> Pick the accent deterministically from the user id / name</li>
+      </ul>
+    </div>
+    <div style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:16px; padding:24px 26px;">
+      <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#C4362F; margin-bottom:14px;">Don't</div>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:11px;">
+        <li style="display:flex; gap:11px; font-family:'Hanken Grotesk',sans-serif; font-size:14px; line-height:1.5; color:#55607A;"><span style="color:#C4362F; flex:none;">✕</span> Fill the disc with a solid color or a gradient</li>
+        <li style="display:flex; gap:11px; font-family:'Hanken Grotesk',sans-serif; font-size:14px; line-height:1.5; color:#55607A;"><span style="color:#C4362F; flex:none;">✕</span> Use the gold wax seal here — that's reserved for mastery</li>
+        <li style="display:flex; gap:11px; font-family:'Hanken Grotesk',sans-serif; font-size:14px; line-height:1.5; color:#55607A;"><span style="color:#C4362F; flex:none;">✕</span> Swap in a generic stock person glyph or emoji</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

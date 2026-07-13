@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Button from '../components/Button.astro'
+import RuleLine from '../components/RuleLine.astro'
+---
+
+<BaseLayout title="Page not found" description="This page isn't in the primer. Let's get you back to something useful.">
+  <section class="notfound">
+    <div class="code">404</div>
+    <div class="rule-center"><RuleLine width="60px" /></div>
+    <h1 class="nf-h1">This page isn't in the primer.</h1>
+    <p class="nf-body">Let's get you back to something useful.</p>
+    <div class="nf-cta">
+      <Button href="/" variant="primary" size="lg">Back to home</Button>
+      <Button href="/how-it-works" variant="text">See how it works</Button>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .notfound {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 120px var(--content-pad-x) 140px;
+    text-align: center;
+  }
+  .code {
+    font-family: var(--font-serif);
+    font-size: 84px;
+    line-height: 1;
+    color: var(--rule-violet);
+  }
+  .rule-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+  }
+  .nf-h1 {
+    font-family: var(--font-serif);
+    font-size: 40px;
+    line-height: 1.14;
+    margin-top: 24px;
+  }
+  .nf-body {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-top: 16px;
+  }
+  .nf-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    .code {
+      font-size: 64px;
+    }
+    .nf-h1 {
+      font-size: 30px;
+    }
+  }
+</style>

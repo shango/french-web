@@ -1,0 +1,199 @@
+---
+import Seal from '../Seal.astro'
+import { WORDMARK } from '../../consts'
+
+// The honest dashboard: real coverage counts, a quiet progress line (never a %),
+// welcome-back streak (no guilt), and the graduation strip. Fills its container width.
+interface Row {
+  name: string
+  sub: string
+  subTone?: 'muted' | 'gold'
+  known: number
+  total: number
+  sealed?: boolean
+}
+interface Props {
+  levelLabel?: string
+  streakDays?: number
+  rows: Row[]
+  gradEyebrow?: string
+  gradText: string
+  note?: string
+}
+const {
+  levelLabel = 'Your primer · Level 1',
+  streakDays = 7,
+  rows,
+  gradEyebrow = 'Level 1 · base vocabulary',
+  gradText,
+  note,
+} = Astro.props
+---
+
+<div>
+  <div class="dash">
+    <div class="dhead">
+      <div>
+        <div class="wm">{WORDMARK}</div>
+        <div class="sub">{levelLabel}</div>
+      </div>
+      <div class="streak"><span class="dotg">●</span> {streakDays} days · <span class="wb">welcome back</span></div>
+    </div>
+
+    <div class="rows">
+      {rows.map((r) => (
+        <div class="row">
+          <div class="rmeta">
+            <div class="rname">{r.name}</div>
+            <div class:list={['rsub', { 'rsub--gold': r.subTone === 'gold' }]}>{r.sub}</div>
+          </div>
+          <div class="count">{r.known} / {r.total}</div>
+          {r.sealed ? (
+            <div class="sealed-wrap"><span class="sealed">✦ sealed</span></div>
+          ) : (
+            <div class="bar"><span class="fill" style={`width:${Math.round((r.known / r.total) * 100)}%;`}></span></div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div class="grad">
+      <div>
+        <div class="geyebrow">{gradEyebrow}</div>
+        <div class="gtext">{gradText}</div>
+      </div>
+      <Seal size={48} label="N1" />
+    </div>
+  </div>
+  {note && <div class="note">{note}</div>}
+</div>
+
+<style>
+  .dash {
+    background: var(--paper);
+    border: 1px solid var(--hairline-2);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+  }
+  .dhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 26px;
+    border-bottom: 1px solid var(--hairline);
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .wm {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    color: var(--red);
+    line-height: 1;
+  }
+  .sub {
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+  .streak {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .dotg {
+    color: var(--gold);
+  }
+  .wb {
+    color: var(--ink-muted);
+  }
+
+  .rows {
+    padding: 22px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .rmeta {
+    flex: 1;
+    min-width: 0;
+  }
+  .rname {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .rsub {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--ink-muted-2);
+  }
+  .rsub--gold {
+    color: var(--gold-label);
+  }
+  .count {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .bar {
+    width: 120px;
+    height: 4px;
+    background: var(--hairline);
+    border-radius: 2px;
+    overflow: hidden;
+    flex: none;
+  }
+  .fill {
+    display: block;
+    height: 100%;
+    background: var(--le);
+  }
+  .sealed-wrap {
+    width: 120px;
+    display: flex;
+    justify-content: flex-end;
+    flex: none;
+  }
+  .sealed {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--gold);
+  }
+
+  .grad {
+    padding: 15px 26px;
+    border-top: 1px solid var(--hairline);
+    background: var(--grad-strip-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .geyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-label);
+  }
+  .gtext {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    color: var(--ink);
+    margin-top: 2px;
+  }
+  .note {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-top: 14px;
+    line-height: 1.55;
+  }
+</style>

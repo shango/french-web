@@ -1,0 +1,64 @@
+---
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { WORDMARK, SITE_DESCRIPTION } from '../consts'
+
+interface Props {
+  title?: string
+  description?: string
+  ogImage?: string
+  /** Hide the shared header/footer chrome (e.g. the minimal signup page). */
+  bare?: boolean
+}
+const {
+  title,
+  description = SITE_DESCRIPTION,
+  ogImage = '/og/default.png',
+  bare = false,
+} = Astro.props
+
+const pathname = Astro.url.pathname
+const pageTitle = title ? `${title} · ${WORDMARK}` : `${WORDMARK} · a French vocabulary primer`
+// Astro.site may be undefined in some dev contexts; guard the canonical/OG absolute URLs.
+const canonical = Astro.site ? new URL(pathname, Astro.site).href : pathname
+const ogImageUrl = Astro.site ? new URL(ogImage, Astro.site).href : ogImage
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Preload the two most critical faces to cut first-paint FOUT. -->
+    <link rel="preload" href="/fonts/eb-garamond-500.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/hanken-grotesk-400.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={WORDMARK} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    {!bare && <Header pathname={pathname} />}
+    <main id="main">
+      <slot />
+    </main>
+    {!bare && <Footer />}
+  </body>
+</html>

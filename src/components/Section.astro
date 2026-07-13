@@ -1,0 +1,50 @@
+---
+// Standard page section: an optional full-width tone band with an inner centered column.
+// band: none (paper ground) · desk · windfall - the two accent bands carry hairline borders.
+interface Props {
+  band?: 'none' | 'desk' | 'windfall'
+  py?: string // vertical padding, e.g. '76px'
+  maxWidth?: string
+  center?: boolean
+  id?: string
+  class?: string
+}
+const {
+  band = 'none',
+  py = '76px',
+  maxWidth = 'var(--content-max)',
+  center = false,
+  id,
+  class: className = '',
+} = Astro.props
+---
+
+<section id={id} class:list={['section', `band--${band}`, className]}>
+  <div
+    class:list={['inner', { 'is-center': center }]}
+    style={`max-width:${maxWidth}; padding-top:${py}; padding-bottom:${py};`}
+  >
+    <slot />
+  </div>
+</section>
+
+<style>
+  .band--desk {
+    background: var(--desk);
+    border-top: 1px solid #d6cfbf;
+    border-bottom: 1px solid #d6cfbf;
+  }
+  .band--windfall {
+    background: var(--windfall-bg);
+    border-top: 1px solid var(--windfall-border);
+    border-bottom: 1px solid var(--windfall-border);
+  }
+  .inner {
+    margin: 0 auto;
+    padding-left: var(--content-pad-x);
+    padding-right: var(--content-pad-x);
+  }
+  .is-center {
+    text-align: center;
+  }
+</style>

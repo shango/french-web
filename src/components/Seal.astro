@@ -1,0 +1,52 @@
+---
+// Gold wax seal - the only celebratory device. Used for milestones, the certificate,
+// mastery. Rotated -8deg with a soft gold shadow. Honors prefers-reduced-motion (the
+// press animation is opt-in via the `animate` prop and disabled globally under reduce).
+interface Props {
+  size?: number
+  label?: string
+  animate?: boolean
+}
+const { size = 48, label = 'N1', animate = false } = Astro.props
+const fontSize = Math.round(size * 0.35)
+---
+
+<span
+  class:list={['seal', { 'seal--animate': animate }]}
+  style={`width:${size}px; height:${size}px; font-size:${fontSize}px;`}
+  aria-hidden="true"
+>{label}</span>
+
+<style>
+  .seal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    border-radius: 50%;
+    background: var(--gold-seal-gradient);
+    color: var(--gold-seal-text);
+    font-family: var(--font-serif);
+    box-shadow:
+      0 4px 10px -3px rgba(120, 90, 20, 0.5),
+      inset 0 1px 2px rgba(255, 255, 255, 0.45);
+    transform: rotate(-8deg);
+  }
+  .seal--animate {
+    animation: sealIn 0.5s ease both;
+  }
+  @keyframes sealIn {
+    0% {
+      transform: scale(0.6) rotate(-8deg);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.07) rotate(-8deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) rotate(-8deg);
+      opacity: 1;
+    }
+  }
+</style>

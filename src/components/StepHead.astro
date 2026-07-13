@@ -1,0 +1,64 @@
+---
+// The numbered step header used down the How-it-works page: red number + uppercase
+// label, an EB Garamond h2, then body copy (passed as the default slot to allow markup).
+interface Props {
+  num: string
+  label: string
+  title: string
+  center?: boolean
+}
+const { num, label, title, center = false } = Astro.props
+---
+
+<div class:list={['step-head', { 'is-center': center }]}>
+  <div class="tag">
+    <span class="num">{num}</span>
+    <span class="label">{label}</span>
+  </div>
+  <h2 class="title">{title}</h2>
+  <div class="body"><slot /></div>
+</div>
+
+<style>
+  .tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .is-center .tag {
+    justify-content: center;
+  }
+  .num {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    color: var(--red);
+  }
+  .label {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8c8776;
+  }
+  .title {
+    font-family: var(--font-serif);
+    font-size: var(--fs-step-h2);
+    line-height: 1.16;
+    margin-top: 14px;
+  }
+  .body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    max-width: 420px;
+  }
+  .is-center .body {
+    max-width: 500px;
+    margin-inline: auto;
+  }
+  .body :global(i) {
+    font-family: var(--font-serif);
+  }
+</style>

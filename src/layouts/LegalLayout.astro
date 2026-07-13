@@ -1,0 +1,127 @@
+---
+import BaseLayout from './BaseLayout.astro'
+
+// Shared shell for the two legal pages: a narrow prose column on the warm ground. Copy is
+// placeholder pending counsel (marketing-site-prd §10); [ bracketed ] items are founder-set.
+interface Props {
+  title: string
+  intro: string
+  updated: string
+}
+const { title, intro, updated } = Astro.props
+---
+
+<BaseLayout title={title} description={intro}>
+  <article class="legal">
+    <header class="legal-head">
+      <div class="eyebrow">Legal</div>
+      <h1 class="legal-h1">{title}</h1>
+      <p class="legal-intro">{intro}</p>
+      <div class="updated">Last updated {updated}</div>
+    </header>
+
+    <div class="draft-note">
+      Draft for placement. This document is a plain-language placeholder and not yet legal
+      advice; the final text is to be reviewed and finalized with counsel before launch.
+      Items in [ brackets ] are to be filled in.
+    </div>
+
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 70px var(--content-pad-x) 84px;
+  }
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8c8776;
+  }
+  .legal-h1 {
+    font-family: var(--font-serif);
+    font-size: 44px;
+    line-height: 1.12;
+    margin: 14px 0 0;
+  }
+  .legal-intro {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 18px 0 0;
+    max-width: 560px;
+  }
+  .updated {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-top: 14px;
+  }
+  .draft-note {
+    background: var(--windfall-bg);
+    border: 1px solid var(--windfall-border);
+    border-radius: var(--radius-tile);
+    padding: 16px 18px;
+    margin-top: 32px;
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  /* Prose: scoped rules applied to the slotted headings/paragraphs/lists via :global. */
+  .prose {
+    margin-top: 40px;
+  }
+  .prose :global(h2) {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    line-height: 1.2;
+    margin: 40px 0 0;
+  }
+  .prose :global(h2:first-child) {
+    margin-top: 0;
+  }
+  .prose :global(p) {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-top: 14px;
+  }
+  .prose :global(ul) {
+    margin: 14px 0 0;
+    padding-left: 22px;
+  }
+  .prose :global(li) {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+  .prose :global(a) {
+    color: var(--red);
+    text-decoration: underline;
+    text-decoration-color: var(--wrong-border);
+    text-underline-offset: 2px;
+  }
+  .prose :global(strong) {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  @media (max-width: 640px) {
+    .legal-h1 {
+      font-size: 34px;
+    }
+  }
+</style>

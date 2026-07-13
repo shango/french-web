@@ -1,0 +1,9 @@
+{
+  // Le Cahier marketing site on Cloudflare. The Astro Cloudflare adapter reads this file
+  // for local dev (platform proxy) and deploy. nodejs_compat lets the one on-demand route
+  // (/start, which runs Clerk's server middleware) import node:fs / node:path / node:async_hooks
+  // in workerd. nodejs_compat v2 requires compatibility_date >= 2024-09-23.
+  "name": "lecahier-web",
+  "compatibility_date": "2026-07-01",
+  "compatibility_flags": ["nodejs_compat"]
+}

@@ -1,0 +1,468 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Section from '../components/Section.astro'
+import Button from '../components/Button.astro'
+import RuleLine from '../components/RuleLine.astro'
+import { START_HREF } from '../consts'
+
+// Plan feature list. Placeholders in [ brackets ] are founder-set (name, price, free scope);
+// they render literally so the page is honest about what's still to be decided.
+const planFeatures = [
+  { lead: 'Start free,', rest: '[ what “free” includes ]' },
+  { lead: 'The full path to 400 words:', rest: 'Verbs, Nouns, Cognates, Connectives' },
+  { lead: 'Audio for every word,', rest: 'on iOS, Android & web' },
+  { lead: 'Your certificate & word export', rest: '(CSV / Anki) at graduation' },
+  { lead: 'Cancel anytime,', rest: 'export your words whenever you leave' },
+]
+
+// Anti-dark-pattern promises. The absence of tricks is the pitch.
+const promises = [
+  { title: 'No countdown timers', body: 'The price is the price tomorrow, too.' },
+  { title: 'No “N spots left”', body: 'Manufactured scarcity isn’t our style.' },
+  { title: 'No cancel-traps', body: 'Leaving takes one tap, and you take your words.' },
+  { title: 'No pre-checked upsells', body: 'You only ever pay for what you chose.' },
+]
+
+// FAQ. Native <details>/<summary> accordions, no JS. Copy is final per the handoff.
+const faqs = [
+  {
+    q: 'Am I a beginner or a restarter, does it matter?',
+    a: 'Both are welcome, and the app adapts. If you’re starting from zero, you get the cognate windfall and a gentle first session. If you remember some school French, take the two-minute placement (“prove it, skip it”) and you’ll start further along instead of re-learning <i>bonjour</i>.',
+  },
+  {
+    q: 'Do I need grammar first?',
+    a: 'No, that’s the point. A working base of words comes first; it makes grammar far easier to learn later, because you’ll have real sentences to hang the rules on. When you graduate we point you to a proper A1 grammar course as your next step.',
+  },
+  {
+    q: 'How long until I have a base?',
+    a: 'About 4–6 months of steady, short sessions to reach ~400 words. We won’t pretend it’s a weekend. But the early wins come fast: the cognate windfall on day one, your first sealed deck within a couple of weeks, so it never feels five months away.',
+  },
+  {
+    q: 'What happens when I finish?',
+    a: 'You graduate. You get a Level-1 certificate, an export of every word you learned (CSV or Anki), and honest recommendations for what’s next: a grammar course, graded readers, or a tutor. Then you can stop paying with our blessing. Leaving is the win.',
+  },
+  {
+    q: 'Why not just use Duolingo?',
+    a: 'Use it if you love it. The difference is intent: streak-and-points apps are designed to keep you playing indefinitely. Le Cahier is designed to end: a focused base of high-frequency words, taught with gender and in context, then a clean handoff. No hearts, no leaderboards, no guilt.',
+  },
+  {
+    q: 'Does it work offline, on iOS and Android?',
+    a: 'Yes, iOS, Android, and the web, with your progress in sync. Much of a session works offline for the metro or a plane; audio caches for the decks you’re studying.',
+  },
+]
+---
+
+<BaseLayout
+  title="Pricing & FAQ"
+  description="One plan. You pay while you build your base, ~400 words over 4-6 months, then you graduate and stop paying. No countdown timers, no cancel-traps, no tricks."
+>
+  {/* ===================== INTRO ===================== */}
+  <Section py="70px" center maxWidth="1080px" class="intro">
+    <div class="eyebrow">Pricing</div>
+    <h1 class="intro-h1">Pay while you build your base. Not a day longer.</h1>
+    <p class="intro-sub">
+      One plan. The base takes most people ~4&ndash;6 months. When you graduate, you stop paying,
+      and you keep your words. That's the deal, stated plainly.
+    </p>
+  </Section>
+
+  {/* ===================== PLAN + PROMISES ===================== */}
+  <Section py="44px" class="plan-section">
+    <div class="plan-grid">
+      {/* the plan card */}
+      <div class="plan-card">
+        <span class="plan-rule" aria-hidden="true"></span>
+        <div class="plan-inner">
+          <div class="plan-top">
+            <div class="plan-label">The plan</div>
+            <div class="free-pill">Free to start</div>
+          </div>
+          <div class="plan-name">[ Plan name ]</div>
+
+          <div class="plan-price">
+            <span class="price">[ price ]</span>
+            <span class="per">/ month, while you learn</span>
+          </div>
+          <div class="plan-note">
+            Founder to set: plan name, price, and exactly what the free start includes.
+          </div>
+
+          <ul class="plan-features">
+            {
+              planFeatures.map((f) => (
+                <li>
+                  <span class="fk">✓</span>
+                  <span>{f.lead} <span class="fk-muted">{f.rest}</span></span>
+                </li>
+              ))
+            }
+          </ul>
+
+          <Button href={START_HREF} variant="primary" size="md" class="plan-cta">Start free</Button>
+          <div class="plan-fine">No card required to begin.</div>
+        </div>
+      </div>
+
+      {/* what you'll never find here */}
+      <div class="promises">
+        <div class="eyebrow promises-eyebrow">What you'll never find here</div>
+        <div class="promise-list">
+          {
+            promises.map((p) => (
+              <div class="promise">
+                <span class="pk">✕</span>
+                <div>
+                  <div class="promise-title">{p.title}</div>
+                  <div class="promise-body">{p.body}</div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <div class="pitch">
+          The absence of tricks <i>is</i> the pitch. A finite, fair deal: you pay while you build,
+          then you're done.
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  {/* ===================== FAQ ===================== */}
+  <Section py="60px" maxWidth="760px" class="faq-section">
+    <div class="faq-head">
+      <div class="eyebrow">Questions</div>
+      <h2 class="faq-h2">The honest answers</h2>
+    </div>
+    <div class="faq-list">
+      {
+        faqs.map((item) => (
+          <details class="faq">
+            <summary>
+              <span class="faq-q">{item.q}</span>
+              <span class="faq-chev" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+              </span>
+            </summary>
+            <div class="faq-a" set:html={item.a} />
+          </details>
+        ))
+      }
+    </div>
+  </Section>
+
+  {/* ===================== CLOSING CTA ===================== */}
+  <Section py="40px" center class="closing">
+    <div class="rule-center"><RuleLine width="60px" /></div>
+    <h2 class="closing-h2">Try a session before you decide.</h2>
+    <p class="closing-body">
+      The first words are free and there's no card to start. See if the pace fits, that's the
+      honest way to find out.
+    </p>
+    <div class="closing-cta">
+      <Button href={START_HREF} variant="primary" size="lg">Start free</Button>
+    </div>
+  </Section>
+</BaseLayout>
+
+<style>
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8c8776;
+  }
+
+  /* ---------- Intro ---------- */
+  .intro-h1 {
+    font-family: var(--font-serif);
+    font-size: 46px;
+    line-height: 1.12;
+    margin: 16px auto 0;
+    max-width: 640px;
+  }
+  .intro-sub {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin: 18px auto 0;
+  }
+
+  /* ---------- Plan + promises ---------- */
+  .plan-grid {
+    display: flex;
+    gap: 36px;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .plan-card {
+    flex: 0 1 420px;
+    min-width: 300px;
+    position: relative;
+    background: var(--paper);
+    border: 1.5px solid var(--rule-violet);
+    border-radius: var(--radius-card-lg);
+    box-shadow: 0 24px 60px -34px rgba(30, 42, 68, 0.45);
+    padding: 38px 36px;
+    overflow: hidden;
+  }
+  .plan-rule {
+    position: absolute;
+    top: 22px;
+    bottom: 22px;
+    left: 22px;
+    width: 1.5px;
+    background: var(--red);
+    opacity: 0.28;
+  }
+  .plan-inner {
+    padding-left: 14px;
+  }
+  .plan-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .plan-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-label);
+  }
+  .free-pill {
+    font-family: var(--font-sans);
+    font-size: 11.5px;
+    color: var(--green);
+    background: var(--green-bg);
+    border: 1px solid var(--green-border);
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+  .plan-name {
+    font-family: var(--font-serif);
+    font-size: 30px;
+    color: var(--ink);
+    margin-top: 10px;
+  }
+  .plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 18px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .price {
+    font-family: var(--font-serif);
+    font-size: 52px;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .per {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    color: var(--ink-muted);
+  }
+  .plan-note {
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    color: var(--ink-muted-2);
+    margin-top: 12px;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  .plan-features li {
+    display: flex;
+    gap: 12px;
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .fk {
+    color: var(--green);
+    flex: none;
+  }
+  .fk-muted {
+    color: var(--ink-muted);
+  }
+  .plan-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 26px;
+  }
+  .plan-fine {
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .promises {
+    flex: 0 1 420px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .promise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .promise {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--paper);
+    border: 1px solid var(--hairline-2);
+    border-radius: var(--radius-tile);
+    padding: 16px 18px;
+  }
+  .pk {
+    color: var(--red);
+    font-size: 15px;
+    flex: none;
+    margin-top: 1px;
+  }
+  .promise-title {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .promise-body {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+  .pitch {
+    background: var(--windfall-bg);
+    border: 1px solid var(--windfall-border);
+    border-radius: var(--radius-tile);
+    padding: 18px 20px;
+    font-family: var(--font-serif);
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  .pitch i {
+    font-family: var(--font-serif);
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-head {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .faq-h2 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    line-height: 1.14;
+    margin-top: 12px;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq {
+    background: var(--paper);
+    border: 1px solid var(--hairline-2);
+    border-radius: 14px;
+    padding: 0 22px;
+  }
+  .faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 20px 0;
+    list-style: none;
+    cursor: pointer;
+  }
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-q {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    color: var(--ink);
+  }
+  .faq-chev {
+    color: var(--la);
+    display: flex;
+    flex: none;
+    transition: transform 0.18s ease;
+  }
+  .faq[open] .faq-chev {
+    transform: rotate(90deg);
+  }
+  .faq-a {
+    padding: 0 0 22px;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  .faq-a :global(i) {
+    font-family: var(--font-serif);
+  }
+
+  /* ---------- Closing ---------- */
+  .rule-center {
+    display: flex;
+    justify-content: center;
+  }
+  .closing-h2 {
+    font-family: var(--font-serif);
+    font-size: 38px;
+    line-height: 1.14;
+    margin: 24px auto 0;
+    max-width: 520px;
+  }
+  .closing-body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 440px;
+    margin: 16px auto 0;
+  }
+  .closing-cta {
+    margin-top: 28px;
+  }
+
+  @media (max-width: 640px) {
+    .intro-h1 {
+      font-size: 34px;
+    }
+    .price {
+      font-size: 42px;
+    }
+    .faq-h2 {
+      font-size: 28px;
+    }
+    .faq-q {
+      font-size: 17px;
+    }
+    .closing-h2 {
+      font-size: 30px;
+    }
+  }
+</style>

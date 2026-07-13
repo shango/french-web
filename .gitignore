@@ -1,0 +1,28 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# environment
+.env
+.env.local
+.env.*.local
+
+# cloudflare / wrangler
+.wrangler/
+.dev.vars
+
+# clerk keyless dev-mode instance state (auto-created when no keys are set)
+.clerk/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editor / os
+.DS_Store
+.vscode/
+!.vscode/extensions.json

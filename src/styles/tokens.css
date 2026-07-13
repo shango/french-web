@@ -1,0 +1,99 @@
+/* Le Cahier design tokens - mirrored verbatim from the app system
+ * (french-app/design_handoff_le_cahier/README.md) and the marketing-site handoff.
+ * These are the single source of truth for the site's look; do NOT fork values in
+ * component styles - reference var(--...) so the site and app cannot drift.
+ * Ethos: warm notebook paper, fountain-pen ink, violet Seyes rule, red correction
+ * margin, gold wax seal. Calm, encouragement-only. */
+
+:root {
+  /* --- Color: grounds & surfaces --- */
+  --paper: #fcfaf3;            /* site ground / card surface (bright warm notebook white) */
+  --paper-white: #ffffff;      /* option rows, secondary/auth buttons */
+  --desk: #e7e3d9;             /* occasional full-width section band (site rhythm only) */
+
+  /* --- Color: ink (text) --- */
+  --ink: #1e2a44;             /* primary text; primary button bg */
+  --ink-soft: #55607a;         /* secondary text, nav links */
+  --ink-muted: #8a8674;        /* captions, labels, hints */
+  --ink-muted-2: #a69c82;      /* fainter muted variant */
+
+  /* --- Color: signature devices --- */
+  --rule-violet: #c9bee6;      /* Seyes ruling line, underlines, certificate frame, dividers */
+  --row-border: #dacfec;       /* idle option-row border (violet-tinted) */
+  --row-hover: #f6f1fb;        /* option-row / selectable-tile hover & selected fill */
+
+  /* --- Color: identity red --- */
+  --red: #c4362f;             /* wordmark, correction margin, "not-for" eyebrows, wrong mark */
+  --red-hover: #9e2a24;        /* link hover */
+
+  /* --- Color: correct / green --- */
+  --green: #2e7d5b;           /* correct feedback, checks, "good fit" eyebrow */
+  --green-bg: #e9f2ec;         /* correct-row fill / "free" pill bg */
+  --green-border: #9bc6af;     /* correct-row border / "free" pill border */
+
+  /* --- Color: wrong --- */
+  --wrong-bg: #fbebe9;         /* wrong-picked-row fill */
+  --wrong-border: #e0a9a3;     /* wrong-picked-row border */
+
+  /* --- Color: gold (mastery / seals) --- */
+  --gold: #c29a3b;            /* seal base */
+  --gold-label: #b08a2e;       /* windfall / milestone / plan eyebrows */
+  --gold-seal-gradient: radial-gradient(circle at 38% 34%, #e7c561, #c29a3b 60%, #9e7a26);
+  --gold-seal-text: #5e4712;
+
+  /* --- Color: windfall / graduation warm bands --- */
+  --windfall-bg: #f4efdf;      /* cognate-windfall & graduation bands, chips */
+  --windfall-border: #e4dbc2;
+  --grad-strip-bg: #f7f2e4;    /* dashboard graduation strip */
+
+  /* --- Color: article tints --- */
+  --le: #435e7e;              /* slate - masculine article; progress-bar fill; neutral accent */
+  --la: #8b5a78;              /* plum - feminine article; chevrons; selected accents */
+
+  /* --- Color: hairlines / borders --- */
+  --hairline: #ede6d6;         /* nav/footer rules, card borders */
+  --hairline-2: #e8e1cf;       /* card borders, dividers (warmer) */
+
+  /* --- Color: locked state --- */
+  --locked-bg: #f6f2e8;
+  --locked-border: #d8cfbb;    /* rendered as a dashed border */
+
+  /* --- Typography: families --- */
+  --font-serif: "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* --- Typography: site type scale (px, per marketing handoff) --- */
+  --fs-hero-h1: 52px;          /* Home hero 1a headline */
+  --fs-hero-statement: 60px;   /* alternate statement hero (1b) */
+  --fs-hero-word: 64px;        /* the French word on the ruled line */
+  --fs-h2: 38px;              /* section headings (36-40) */
+  --fs-step-h2: 32px;          /* how-it-works step heading */
+  --fs-card-prompt: 31px;      /* study-card prompt (24-31) */
+  --fs-body: 17px;            /* body copy (16-17) */
+  --fs-body-sm: 15px;          /* dense body / answers */
+  --fs-nav: 14px;             /* nav links, buttons */
+  --fs-label: 13px;           /* captions, fine print */
+  --fs-eyebrow: 12px;          /* uppercase eyebrow (11-12) */
+  --lh-body: 1.6;
+
+  /* --- Radii --- */
+  --radius-card: 16px;         /* cards */
+  --radius-card-lg: 20px;      /* plan / graduation cards */
+  --radius-tile: 13px;         /* tiles / panels (13-14) */
+  --radius-control: 10px;      /* buttons / rows (9-11) */
+  --radius-cert: 8px;          /* certificate outer (inner 4px) */
+
+  /* --- Shadows --- */
+  --shadow-card: 0 20px 46px -26px rgba(30, 42, 68, 0.42);
+  --shadow-hero: 0 24px 54px -30px rgba(30, 42, 68, 0.5);   /* larger hero / panel */
+  --shadow-tile: 0 10px 22px -18px rgba(30, 42, 68, 0.5);
+
+  /* --- Layout --- */
+  --content-max: 1080px;       /* centered content width */
+  --content-max-signup: 1000px;
+  --content-max-faq: 760px;
+  --content-pad-x: 32px;       /* horizontal page padding */
+
+  /* --- Motion --- */
+  --transition-state: 0.16s ease;   /* row/state transitions */
+}

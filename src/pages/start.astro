@@ -1,0 +1,296 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import CorrectionMargin from '../components/CorrectionMargin.astro'
+import Seal from '../components/Seal.astro'
+import { WORDMARK, FOOTER_LINKS } from '../consts'
+import { SignUp } from '@clerk/astro/components'
+
+// The only on-demand route: Clerk's middleware injects auth locals we read at request time.
+export const prerender = false
+
+// Where Clerk sends the user after a successful sign-up (the app owns onboarding + sign-in).
+const appUrl = import.meta.env.PUBLIC_APP_URL ?? 'http://localhost:5173'
+
+// Brand the Clerk widget to the cahier palette rather than restyling every internal element.
+const clerkAppearance = {
+  variables: {
+    colorPrimary: '#1e2a44',
+    colorText: '#1e2a44',
+    colorTextSecondary: '#55607a',
+    colorBackground: '#fcfaf3',
+    colorInputBackground: '#ffffff',
+    colorInputText: '#1e2a44',
+    fontFamily: '"Hanken Grotesk", system-ui, sans-serif',
+    borderRadius: '10px',
+  },
+}
+
+const trust = [
+  {
+    lead: 'No credit card to start.',
+    rest: 'We’ll tell you before anything is ever charged, never after.',
+  },
+  { lead: 'Cancel in one tap.', rest: 'Export your words whenever you leave.' },
+  {
+    lead: 'Built to graduate you.',
+    rest: '~400 words, then a certificate and a wave goodbye.',
+  },
+]
+---
+
+<BaseLayout title="Start free" description="Create your Le Cahier account and begin, no card required. We start you on the words you already half-know." bare>
+  {/* ---------- minimal header ---------- */}
+  <header class="mini-header">
+    <div class="mini-inner">
+      <a href="/" class="wordmark">{WORDMARK}</a>
+      <div class="signin-line">
+        Already have an account? <a href={appUrl} class="signin-link">Sign in</a>
+      </div>
+    </div>
+  </header>
+
+  {/* ---------- signup ---------- */}
+  <section class="signup">
+    {/* left · opening the cahier */}
+    <div class="pitch">
+      <div class="pitch-head">
+        <CorrectionMargin inset={2} left={0} gap={4} strong={0.35} faint={0.13} />
+        <div class="pitch-pad">
+          <div class="eyebrow">Open the cahier</div>
+          <h1 class="pitch-h1">Start free.<br />Your first words are waiting.</h1>
+          <p class="pitch-sub">
+            Create an account and begin, no card required. We'll ask why you're learning French
+            once you're in, and start you on the words you already half-know.
+          </p>
+        </div>
+      </div>
+
+      <ul class="trust">
+        {
+          trust.map((t) => (
+            <li>
+              <span class="tk">✓</span>
+              <span><b>{t.lead}</b> {t.rest}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    {/* right · Clerk auth island */}
+    <div class="auth">
+      <SignUp appearance={clerkAppearance} fallbackRedirectUrl={appUrl} signInUrl={appUrl} />
+    </div>
+  </section>
+
+  {/* ---------- after signup (hand-off preview) ---------- */}
+  <section class="after">
+    <div class="after-eyebrow">After you sign up · a brief welcome, then into the app</div>
+    <div class="after-card">
+      <Seal size={60} label="✦" />
+      <div class="after-title">Bienvenue.</div>
+      <div class="after-body">
+        Your cahier is open. Next we'll ask why you're learning, two taps, and start you on your
+        first words.
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- minimal footer ---------- */}
+  <footer class="mini-footer">
+    <div class="mini-footer-inner">
+      <div class="copyline">© {WORDMARK} - built to graduate you.</div>
+      <nav class="flinks" aria-label="Footer">
+        {FOOTER_LINKS.filter((l) => l.href !== '/start').map((l) => <a href={l.href}>{l.label}</a>)}
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8c8776;
+  }
+
+  /* ---------- minimal header ---------- */
+  .mini-header {
+    border-bottom: 1px solid var(--hairline);
+  }
+  .mini-inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 16px var(--content-pad-x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .wordmark {
+    font-family: var(--font-serif);
+    font-size: 25px;
+    color: var(--red);
+    white-space: nowrap;
+  }
+  .signin-line {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    color: var(--ink-muted);
+  }
+  .signin-link {
+    font-weight: 600;
+  }
+
+  /* ---------- signup ---------- */
+  .signup {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 56px var(--content-pad-x) 40px;
+    display: flex;
+    gap: 56px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .pitch {
+    flex: 1 1 360px;
+    min-width: 300px;
+  }
+  .pitch-head {
+    position: relative;
+  }
+  .pitch-pad {
+    padding-left: 24px;
+  }
+  .pitch-h1 {
+    font-family: var(--font-serif);
+    font-size: 42px;
+    line-height: 1.12;
+    margin: 14px 0 0;
+  }
+  .pitch-sub {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 400px;
+    margin: 18px 0 0;
+  }
+  .trust {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .trust li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .trust b {
+    font-weight: 600;
+  }
+  .tk {
+    color: var(--green);
+    font-size: 15px;
+    flex: none;
+    margin-top: 2px;
+  }
+
+  .auth {
+    flex: 1 1 380px;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* ---------- after signup ---------- */
+  .after {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px var(--content-pad-x) 80px;
+  }
+  .after-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8c8776;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .after-card {
+    max-width: 440px;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid var(--hairline-2);
+    border-radius: var(--radius-card);
+    box-shadow: 0 20px 46px -28px rgba(30, 42, 68, 0.4);
+    padding: 36px 34px;
+    text-align: center;
+  }
+  .after-card :global(.seal) {
+    margin: 0 auto;
+  }
+  .after-title {
+    font-family: var(--font-serif);
+    font-size: 27px;
+    color: var(--ink);
+    margin-top: 20px;
+  }
+  .after-body {
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+
+  /* ---------- minimal footer ---------- */
+  .mini-footer {
+    border-top: 1px solid var(--hairline);
+    background: var(--paper);
+  }
+  .mini-footer-inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 28px var(--content-pad-x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .copyline {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+  .flinks {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .flinks a {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+  .flinks a:hover {
+    color: var(--ink);
+  }
+
+  @media (max-width: 640px) {
+    .pitch-h1 {
+      font-size: 34px;
+    }
+  }
+</style>

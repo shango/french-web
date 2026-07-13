@@ -1,0 +1,128 @@
+---
+import { WORDMARK, NAV_LINKS, START_HREF } from '../consts'
+import Button from './Button.astro'
+
+// Active nav state from the current path (passed by the layout).
+const { pathname } = Astro.props as { pathname: string }
+const isActive = (href: string) => pathname === href || pathname.startsWith(href + '/')
+---
+
+<header class="site-header">
+  <div class="bar">
+    <a href="/" class="wordmark">{WORDMARK}</a>
+
+    <!-- Desktop nav -->
+    <nav class="nav nav--desktop" aria-label="Primary">
+      {NAV_LINKS.map((l) => (
+        <a href={l.href} class:list={['navlink', { 'is-active': isActive(l.href) }]} aria-current={isActive(l.href) ? 'page' : undefined}>{l.label}</a>
+      ))}
+      <Button href={START_HREF} variant="primary" size="md" class="nav-cta">Start free</Button>
+    </nav>
+
+    <!-- Mobile disclosure menu (JS-free) -->
+    <details class="nav-mobile">
+      <summary aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </summary>
+      <div class="nav-panel">
+        {NAV_LINKS.map((l) => (
+          <a href={l.href} class:list={['navlink', { 'is-active': isActive(l.href) }]} aria-current={isActive(l.href) ? 'page' : undefined}>{l.label}</a>
+        ))}
+        <Button href={START_HREF} variant="primary" size="md">Start free</Button>
+      </div>
+    </details>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(252, 250, 243, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .bar {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 16px var(--content-pad-x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .wordmark {
+    font-family: var(--font-serif);
+    font-size: 25px;
+    color: var(--red);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .wordmark:hover {
+    color: var(--red);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .navlink {
+    font-family: var(--font-sans);
+    font-size: var(--fs-nav);
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+  .navlink:hover {
+    color: var(--ink);
+  }
+  .navlink.is-active {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* Mobile disclosure */
+  .nav-mobile {
+    display: none;
+    position: relative;
+  }
+  .nav-mobile summary {
+    list-style: none;
+    cursor: pointer;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* ≥44px tap target (24px icon + 2×10px). */
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .nav-mobile summary::-webkit-details-marker {
+    display: none;
+  }
+  .nav-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    background: var(--paper);
+    border: 1px solid var(--hairline-2);
+    border-radius: var(--radius-tile);
+    box-shadow: var(--shadow-card);
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 200px;
+  }
+
+  @media (max-width: 720px) {
+    .nav--desktop {
+      display: none;
+    }
+    .nav-mobile {
+      display: block;
+    }
+  }
+</style>

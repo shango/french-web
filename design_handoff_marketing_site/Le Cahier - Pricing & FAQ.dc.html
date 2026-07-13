@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#FCFAF3; font-family:'Hanken Grotesk',system-ui,sans-serif; -webkit-font-smoothing:antialiased; color:#1E2A44; }
+  a{ color:#C4362F; text-decoration:none; }
+  a:hover{ color:#9E2A24; }
+  summary{ list-style:none; cursor:pointer; }
+  summary::-webkit-details-marker{ display:none; }
+  details[open] .faq-chev{ transform:rotate(90deg); }
+</style>
+</helmet>
+
+<div style="background:#FCFAF3; min-height:100%; overflow-x:hidden;">
+
+  <!-- NAV -->
+  <header style="position:sticky; top:0; z-index:20; background:rgba(252,250,243,.88); backdrop-filter:blur(10px); border-bottom:1px solid #EDE6D6;">
+    <div style="max-width:1080px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="Le Cahier - Home.dc.html" style="font-family:'EB Garamond',serif; font-size:25px; color:#C4362F; white-space:nowrap;">Le Cahier</a>
+      <nav style="display:flex; align-items:center; gap:30px;">
+        <a href="Le Cahier - How It Works.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:14px; font-weight:500; color:#55607A;" style-hover="color:#1E2A44">How it works</a>
+        <a href="Le Cahier - Pricing & FAQ.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:14px; font-weight:600; color:#1E2A44;">Pricing &amp; FAQ</a>
+        <a href="Le Cahier - Start Free.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:14px; font-weight:600; color:#FCFAF3; background:#1E2A44; border-radius:9px; padding:10px 18px;" style-hover="color:#FCFAF3; background:#111a30">Start free</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section style="max-width:1080px; margin:0 auto; padding:70px 32px 8px; text-align:center;">
+    <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#8C8776;">Pricing</div>
+    <h1 style="font-family:'EB Garamond',serif; font-weight:500; font-size:46px; line-height:1.12; color:#1E2A44; margin:16px auto 0; max-width:640px;">Pay while you build your base. Not a day longer.</h1>
+    <p style="font-family:'Hanken Grotesk',sans-serif; font-size:17px; line-height:1.6; color:#55607A; max-width:540px; margin:18px auto 0;">One plan. The base takes most people ~4–6 months. When you graduate, you stop paying, and you keep your words. That's the deal, stated plainly.</p>
+  </section>
+
+  <!-- PLAN + TRUST -->
+  <section style="max-width:1080px; margin:0 auto; padding:44px 32px; display:flex; gap:36px; align-items:stretch; flex-wrap:wrap; justify-content:center;">
+    <!-- the plan card -->
+    <div style="flex:0 1 420px; min-width:300px; background:#FCFAF3; border:1.5px solid #C9BEE6; border-radius:20px; box-shadow:0 24px 60px -34px rgba(30,42,68,.45); padding:38px 36px; position:relative; overflow:hidden;">
+      <div style="position:absolute; top:22px; bottom:22px; left:22px; width:1.5px; background:#C4362F; opacity:.28;"></div>
+      <div style="padding-left:14px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+          <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#B08A2E;">The plan</div>
+          <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11.5px; color:#2E7D5B; background:#E9F2EC; border:1px solid #9BC6AF; border-radius:20px; padding:4px 12px;">Free to start</div>
+        </div>
+        <div style="font-family:'EB Garamond',serif; font-size:30px; color:#1E2A44; margin-top:10px;">[ Plan name ]</div>
+
+        <div style="display:flex; align-items:baseline; gap:8px; margin-top:18px; padding-bottom:20px; border-bottom:1px solid #EDE6D6;">
+          <span style="font-family:'EB Garamond',serif; font-size:52px; color:#1E2A44; line-height:1;">[ price ]</span>
+          <span style="font-family:'Hanken Grotesk',sans-serif; font-size:15px; color:#8A8674;">/ month, while you learn</span>
+        </div>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#A69C82; margin-top:12px; line-height:1.5; font-style:italic;">Founder to set: plan name, price, and exactly what the free start includes.</div>
+
+        <div style="display:flex; flex-direction:column; gap:13px; margin-top:22px;">
+          <div style="display:flex; gap:12px; font-family:'Hanken Grotesk',sans-serif; font-size:14.5px; line-height:1.5; color:#1E2A44;"><span style="color:#2E7D5B; flex:none;">✓</span> Start free, <span style="color:#8A8674;">[ what “free” includes ]</span></div>
+          <div style="display:flex; gap:12px; font-family:'Hanken Grotesk',sans-serif; font-size:14.5px; line-height:1.5; color:#1E2A44;"><span style="color:#2E7D5B; flex:none;">✓</span> The full path to 400 words: Verbs, Nouns, Cognates, Connectives</div>
+          <div style="display:flex; gap:12px; font-family:'Hanken Grotesk',sans-serif; font-size:14.5px; line-height:1.5; color:#1E2A44;"><span style="color:#2E7D5B; flex:none;">✓</span> Audio for every word, on iOS, Android &amp; web</div>
+          <div style="display:flex; gap:12px; font-family:'Hanken Grotesk',sans-serif; font-size:14.5px; line-height:1.5; color:#1E2A44;"><span style="color:#2E7D5B; flex:none;">✓</span> Your certificate &amp; word export (CSV / Anki) at graduation</div>
+          <div style="display:flex; gap:12px; font-family:'Hanken Grotesk',sans-serif; font-size:14.5px; line-height:1.5; color:#1E2A44;"><span style="color:#2E7D5B; flex:none;">✓</span> Cancel anytime, export your words whenever you leave</div>
+        </div>
+
+        <a href="Le Cahier - Start Free.dc.html" style="display:block; text-align:center; font-family:'Hanken Grotesk',sans-serif; font-size:16px; font-weight:600; color:#FCFAF3; background:#1E2A44; border-radius:11px; padding:15px 0; margin-top:26px;" style-hover="color:#FCFAF3; background:#111a30">Start free</a>
+        <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12.5px; color:#8A8674; text-align:center; margin-top:12px;">No card required to begin.</div>
+      </div>
+    </div>
+
+    <!-- our promises (anti-dark-pattern) -->
+    <div style="flex:0 1 420px; min-width:300px; display:flex; flex-direction:column; gap:16px;">
+      <div style="font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#8C8776;">What you'll never find here</div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="display:flex; gap:14px; align-items:flex-start; background:#FCFAF3; border:1px solid #E8E1CF; border-radius:13px; padding:16px 18px;"><span style="color:#C4362F; font-size:15px; flex:none; margin-top:1px;">✕</span><div><div style="font-family:'EB Garamond',serif; font-size:18px; color:#1E2A44;">No countdown timers</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:13.5px; color:#8A8674; margin-top:2px; line-height:1.5;">The price is the price tomorrow, too.</div></div></div>
+        <div style="display:flex; gap:14px; align-items:flex-start; background:#FCFAF3; border:1px solid #E8E1CF; border-radius:13px; padding:16px 18px;"><span style="color:#C4362F; font-size:15px; flex:none; margin-top:1px;">✕</span><div><div style="font-family:'EB Garamond',serif; font-size:18px; color:#1E2A44;">No “N spots left”</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:13.5px; color:#8A8674; margin-top:2px; line-height:1.5;">Manufactured scarcity isn't our style.</div></div></div>
+        <div style="display:flex; gap:14px; align-items:flex-start; background:#FCFAF3; border:1px solid #E8E1CF; border-radius:13px; padding:16px 18px;"><span style="color:#C4362F; font-size:15px; flex:none; margin-top:1px;">✕</span><div><div style="font-family:'EB Garamond',serif; font-size:18px; color:#1E2A44;">No cancel-traps</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:13.5px; color:#8A8674; margin-top:2px; line-height:1.5;">Leaving takes one tap, and you take your words.</div></div></div>
+        <div style="display:flex; gap:14px; align-items:flex-start; background:#FCFAF3; border:1px solid #E8E1CF; border-radius:13px; padding:16px 18px;"><span style="color:#C4362F; font-size:15px; flex:none; margin-top:1px;">✕</span><div><div style="font-family:'EB Garamond',serif; font-size:18px; color:#1E2A44;">No pre-checked upsells</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:13.5px; color:#8A8674; margin-top:2px; line-height:1.5;">You only ever pay for what you chose.</div></div></div>
+      </div>
+      <div style="background:#F4EFDF; border:1px solid #E4DBC2; border-radius:13px; padding:18px 20px;">
+        <div style="font-family:'EB Garamond',serif; font-size:17px; color:#1E2A44; line-height:1.45;">The absence of tricks <i>is</i> the pitch. A finite, fair deal: you pay while you build, then you're done.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="max-width:760px; margin:0 auto; padding:60px 32px 40px;">
+    <div style="text-align:center; margin-bottom:36px;">
+      <div style="font-family:'Hanken Grotesk',sans-serif; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#8C8776;">Questions</div>
+      <h2 style="font-family:'EB Garamond',serif; font-weight:500; font-size:36px; line-height:1.14; color:#1E2A44; margin:12px 0 0;">The honest answers</h2>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+
+      <details style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:14px; padding:0 22px;">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:14px; padding:20px 0; font-family:'EB Garamond',serif; font-size:20px; color:#1E2A44;">Am I a beginner or a restarter, does it matter? <span class="faq-chev" style="color:#8B5A78; display:flex; transition:transform .18s ease;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span></summary>
+        <div style="padding:0 0 22px; font-family:'Hanken Grotesk',sans-serif; font-size:15px; line-height:1.65; color:#55607A;">Both are welcome, and the app adapts. If you're starting from zero, you get the cognate windfall and a gentle first session. If you remember some school French, take the two-minute placement (“prove it, skip it”) and you'll start further along instead of re-learning <i>bonjour</i>.</div>
+      </details>
+
+      <details style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:14px; padding:0 22px;">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:14px; padding:20px 0; font-family:'EB Garamond',serif; font-size:20px; color:#1E2A44;">Do I need grammar first? <span class="faq-chev" style="color:#8B5A78; display:flex; transition:transform .18s ease;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span></summary>
+        <div style="padding:0 0 22px; font-family:'Hanken Grotesk',sans-serif; font-size:15px; line-height:1.65; color:#55607A;">No, that's the point. A working base of words comes first; it makes grammar far easier to learn later, because you'll have real sentences to hang the rules on. When you graduate we point you to a proper A1 grammar course as your next step.</div>
+      </details>
+
+      <details style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:14px; padding:0 22px;">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:14px; padding:20px 0; font-family:'EB Garamond',serif; font-size:20px; color:#1E2A44;">How long until I have a base? <span class="faq-chev" style="color:#8B5A78; display:flex; transition:transform .18s ease;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span></summary>
+        <div style="padding:0 0 22px; font-family:'Hanken Grotesk',sans-serif; font-size:15px; line-height:1.65; color:#55607A;">About 4–6 months of steady, short sessions to reach ~400 words. We won't pretend it's a weekend. But the early wins come fast: the cognate windfall on day one, your first sealed deck within a couple of weeks, so it never feels five months away.</div>
+      </details>
+
+      <details style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:14px; padding:0 22px;">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:14px; padding:20px 0; font-family:'EB Garamond',serif; font-size:20px; color:#1E2A44;">What happens when I finish? <span class="faq-chev" style="color:#8B5A78; display:flex; transition:transform .18s ease;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span></summary>
+        <div style="padding:0 0 22px; font-family:'Hanken Grotesk',sans-serif; font-size:15px; line-height:1.65; color:#55607A;">You graduate. You get a Level-1 certificate, an export of every word you learned (CSV or Anki), and honest recommendations for what's next: a grammar course, graded readers, or a tutor. Then you can stop paying with our blessing. Leaving is the win.</div>
+      </details>
+
+      <details style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:14px; padding:0 22px;">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:14px; padding:20px 0; font-family:'EB Garamond',serif; font-size:20px; color:#1E2A44;">Why not just use Duolingo? <span class="faq-chev" style="color:#8B5A78; display:flex; transition:transform .18s ease;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span></summary>
+        <div style="padding:0 0 22px; font-family:'Hanken Grotesk',sans-serif; font-size:15px; line-height:1.65; color:#55607A;">Use it if you love it. The difference is intent: streak-and-points apps are designed to keep you playing indefinitely. Le Cahier is designed to end: a focused base of high-frequency words, taught with gender and in context, then a clean handoff. No hearts, no leaderboards, no guilt.</div>
+      </details>
+
+      <details style="background:#FCFAF3; border:1px solid #E8E1CF; border-radius:14px; padding:0 22px;">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:14px; padding:20px 0; font-family:'EB Garamond',serif; font-size:20px; color:#1E2A44;">Does it work offline, on iOS and Android? <span class="faq-chev" style="color:#8B5A78; display:flex; transition:transform .18s ease;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span></summary>
+        <div style="padding:0 0 22px; font-family:'Hanken Grotesk',sans-serif; font-size:15px; line-height:1.65; color:#55607A;">Yes, iOS, Android, and the web, with your progress in sync. Much of a session works offline for the metro or a plane; audio caches for the decks you're studying.</div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section style="max-width:1080px; margin:0 auto; padding:40px 32px 84px; text-align:center;">
+    <div style="display:inline-block; width:60px; height:2px; background:#C9BEE6; margin-bottom:24px;"></div>
+    <h2 style="font-family:'EB Garamond',serif; font-weight:500; font-size:38px; line-height:1.14; color:#1E2A44; margin:0 auto; max-width:520px;">Try a session before you decide.</h2>
+    <p style="font-family:'Hanken Grotesk',sans-serif; font-size:16px; line-height:1.6; color:#55607A; max-width:440px; margin:16px auto 0;">The first words are free and there's no card to start. See if the pace fits, that's the honest way to find out.</p>
+    <div style="margin-top:28px;"><a href="Le Cahier - Start Free.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:16px; font-weight:600; color:#FCFAF3; background:#1E2A44; border-radius:11px; padding:15px 32px; display:inline-block;" style-hover="color:#FCFAF3; background:#111a30">Start free</a></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid #EDE6D6; background:#FCFAF3;">
+    <div style="max-width:1080px; margin:0 auto; padding:36px 32px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+      <div><div style="font-family:'EB Garamond',serif; font-size:21px; color:#C4362F;">Le Cahier</div><div style="font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:#8A8674; margin-top:4px;">A French vocabulary primer, built to graduate you.</div></div>
+      <nav style="display:flex; gap:26px; flex-wrap:wrap;">
+        <a href="Le Cahier - Home.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:13.5px; color:#55607A;" style-hover="color:#1E2A44">Home</a>
+        <a href="Le Cahier - How It Works.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:13.5px; color:#55607A;" style-hover="color:#1E2A44">How it works</a>
+        <a href="Le Cahier - Start Free.dc.html" style="font-family:'Hanken Grotesk',sans-serif; font-size:13.5px; color:#55607A;" style-hover="color:#1E2A44">Start free</a>
+      </nav>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,124 @@
+---
+import Seal from '../Seal.astro'
+import { WORDMARK } from '../../consts'
+
+interface Props {
+  name?: string
+  date?: string
+}
+const { name = 'your name', date = 'le 9 juillet' } = Astro.props
+---
+
+<div class="cert">
+  <div class="frame">
+    <span class="margin" aria-hidden="true"></span>
+    <div class="eyebrow">Certificat · Niveau 1</div>
+    <div class="title">Base Vocabulary</div>
+    <div class="line">This certifies that</div>
+    <div class="name">{name}</div>
+    <p class="body">has built, by hand, a working base of <b>400 French words.</b> The primer's work is done. What comes next is yours.</p>
+    <div class="sig">
+      <div class="sigcol">
+        <div class="sigval">{date}</div>
+        <div class="siglabel">date</div>
+      </div>
+      <Seal size={54} label="N1" />
+      <div class="sigcol sigcol--right">
+        <div class="sigval">{WORDMARK}</div>
+        <div class="siglabel">issued by</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cert {
+    position: relative;
+    background: var(--paper);
+    border-radius: var(--radius-cert);
+    box-shadow: 0 20px 48px -26px rgba(30, 42, 68, 0.5);
+    padding: 10px;
+  }
+  .frame {
+    border: 1.5px solid var(--rule-violet);
+    border-radius: 4px;
+    padding: 34px 38px 38px;
+    text-align: center;
+    position: relative;
+  }
+  .margin {
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    left: 16px;
+    width: 1px;
+    background: var(--red);
+    opacity: 0.35;
+  }
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold-label);
+  }
+  .title {
+    font-family: var(--font-serif);
+    font-size: 30px;
+    color: var(--ink);
+    margin-top: 10px;
+    line-height: 1.1;
+  }
+  .line {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 14px;
+  }
+  .name {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 26px;
+    color: var(--red);
+    margin-top: 5px;
+  }
+  .body {
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin: 14px auto 0;
+    line-height: 1.6;
+    max-width: 320px;
+  }
+  .body b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .sig {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 26px;
+  }
+  .sigcol {
+    text-align: left;
+  }
+  .sigcol--right {
+    text-align: right;
+  }
+  .sigval {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule-violet);
+    padding-bottom: 3px;
+    min-width: 96px;
+  }
+  .siglabel {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    color: var(--ink-muted-2);
+    margin-top: 4px;
+  }
+</style>
