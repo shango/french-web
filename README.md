@@ -90,6 +90,33 @@ wrangler kv namespace create SESSION
 
 then add the returned id to `wrangler.jsonc` under `kv_namespaces`.
 
+## Continuous deployment (GitHub -> Workers Builds)
+
+Every push to `main` builds and deploys automatically via Cloudflare **Workers Builds**
+(the git integration for Workers). One-time setup in the Cloudflare dashboard:
+
+1. **Workers & Pages -> Create -> Workers -> Import a repository.** Authorize the Cloudflare
+   GitHub app for `shango/french-web`. Name the Worker **`lecahier-web`** so it matches
+   `name` in `wrangler.jsonc` (otherwise the git connection and the deploy command target two
+   different Workers).
+2. **Build settings:**
+   - Root directory: `/`
+   - Build command: `npm run build`
+   - Deploy command: `npx wrangler deploy`
+   (Workers Builds installs dependencies before the build.)
+3. **Build variables** (needed during the build - `PUBLIC_*` are inlined into the client bundle):
+   `PUBLIC_CLERK_PUBLISHABLE_KEY`, `PUBLIC_APP_URL`, and optionally `PUBLIC_CF_ANALYTICS_TOKEN`.
+4. **Runtime secret** (used by the Worker at request time, on `/start`): add `CLERK_SECRET_KEY`
+   as an encrypted secret under the Worker's **Settings -> Variables and Secrets** (or
+   `wrangler secret put CLERK_SECRET_KEY`). Use the **same Clerk instance as the app**.
+5. **First deploy** provisions the custom domains from `wrangler.jsonc` (`lecahier.courses` +
+   `www.lecahier.courses`). This requires the apex to be free on the `lecahier.courses` zone -
+   if an existing proxied record already serves the apex, remove/replace it first or the
+   provisioning step fails. www is served too; canonical tags point at the apex for SEO.
+
+After setup, `git push origin main` -> Cloudflare builds -> live. Build logs and rollbacks are
+in the Worker's **Deployments** tab.
+
 ## Notes
 
 - **`/start` needs real Clerk keys.** With no keys set, Clerk runs in keyless dev mode and
