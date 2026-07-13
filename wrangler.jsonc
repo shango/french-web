@@ -1,9 +1,39 @@
 {
-  // Le Cahier marketing site on Cloudflare. The Astro Cloudflare adapter reads this file
-  // for local dev (platform proxy) and deploy. nodejs_compat lets the one on-demand route
-  // (/start, which runs Clerk's server middleware) import node:fs / node:path / node:async_hooks
-  // in workerd. nodejs_compat v2 requires compatibility_date >= 2024-09-23.
+  // Le Cahier marketing site on Cloudflare Workers (Astro 6 + @astrojs/cloudflare v13).
+  // Deploy shape: static pages are prerendered to ./dist/client and served from the ASSETS
+  // binding; the one on-demand route (/start, Clerk sign-up) runs in the Worker. Deploy with
+  // `npm run deploy` (astro build && wrangler deploy). Preview the edge build locally with
+  // `npm run preview` (astro build && wrangler dev).
   "name": "lecahier-web",
+
+  // Astro 6 unified entrypoint - the adapter's package export wraps the built ./dist/server
+  // Worker for both `wrangler dev` and `wrangler deploy`. Do not point this at dist/ directly.
+  "main": "@astrojs/cloudflare/entrypoints/server",
+
+  // Bump to the day you deploy. nodejs_compat v2 requires a date >= 2024-09-23.
   "compatibility_date": "2026-07-01",
-  "compatibility_flags": ["nodejs_compat"]
+
+  // nodejs_compat: /start runs Clerk's server middleware, which imports node:fs / node:path /
+  //   node:async_hooks in workerd. Without it the Worker fails to boot.
+  // global_fetch_strictly_public: Astro's recommended default for SSR - routes fetch() through
+  //   the public internet (Clerk's API calls), avoiding same-zone loopback surprises.
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+
+  // Prerendered static output. `binding` exposes it to the Worker as env.ASSETS; the Worker
+  // only runs for routes without a matching static file (i.e. /start).
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist/client"
+  },
+
+  "observability": {
+    "enabled": true
+  }
+
+  // NOTE: Astro 6's Cloudflare adapter always enables KV-backed sessions, so the build injects a
+  // `SESSION` KV binding into the Worker (visible in `wrangler deploy --dry-run`) even though this
+  // site never calls Astro.session (Clerk auth lives in cookies). On the first `wrangler deploy`,
+  // Wrangler provisions that namespace for you; or pre-create it and pin the id here:
+  //   `wrangler kv namespace create SESSION`
+  //   "kv_namespaces": [{ "binding": "SESSION", "id": "<id>" }]
 }
