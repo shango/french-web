@@ -62,7 +62,9 @@ Only after Phase 1 verified.
 
 ## Phase 3 - Deploy marketing via Workers Builds
 
-Repo is ready: `compatibility_date` bumped to `2026-07-19`, build is green (`npm run build`).
+Repo is ready: `compatibility_date` set to `2026-07-15`, build is green (`npm run build`).
+(Note: `2026-07-19` failed the Workers Builds build - the build-time workerd binary only
+supported dates up to `2026-07-15`. Never set the date past the build runtime's ceiling.)
 
 1. **Cloudflare** -> Workers & Pages -> Create -> Workers -> **Import a repository** ->
    authorize CF GitHub app for `shango/french-web`.

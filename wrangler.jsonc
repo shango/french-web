@@ -10,8 +10,12 @@
   // Worker for both `wrangler dev` and `wrangler deploy`. Do not point this at dist/ directly.
   "main": "@astrojs/cloudflare/entrypoints/server",
 
-  // Bump to the day you deploy. nodejs_compat v2 requires a date >= 2024-09-23.
-  "compatibility_date": "2026-07-19",
+  // Bump toward the day you deploy, but not past the workerd build binary's newest supported
+  // date (Workers Builds' bundled miniflare validates the Worker at build time). As of the
+  // 2026-07-19 launch that ceiling was 2026-07-15; a newer date fails the build with
+  // "requires compatibility date ... but the newest date supported by this server binary is ...".
+  // nodejs_compat v2 requires a date >= 2024-09-23; 2026-07-15 clears that comfortably.
+  "compatibility_date": "2026-07-15",
 
   // nodejs_compat: /start runs Clerk's server middleware, which imports node:fs / node:path /
   //   node:async_hooks in workerd. Without it the Worker fails to boot.
